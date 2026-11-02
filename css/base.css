@@ -387,20 +387,25 @@ button {
     z-index: 2;
   }
 
+  /* Home: Menu, then the two links, centered as one group like the desktop nav */
+  [data-page="home"] .nav {
+    justify-content: center;
+  }
+
+  [data-page="home"] .nav__toggle {
+    margin-left: 0;
+  }
+
   .nav__bar {
     display: flex;
     align-items: center;
     gap: clamp(var(--space-5), 3.4vw, var(--space-7));
-    margin-left: auto;
+    margin-left: clamp(var(--space-5), 3.4vw, var(--space-7));
     pointer-events: auto;
   }
 
   .nav__bar li {
     display: flex;
-  }
-
-  .nav__bar + .nav__toggle {
-    margin-left: clamp(var(--space-5), 3.4vw, var(--space-7));
   }
 
   /* The opened menu covers the bar */
@@ -424,7 +429,7 @@ button {
     background: var(--menu-sheet);
   }
 
-  .nav[data-open="true"] .nav__link {
+  .nav[data-open="true"] .nav__list .nav__link {
     font-size: var(--fs-lg);
   }
 }
