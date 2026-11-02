@@ -1,0 +1,390 @@
+{
+  "_readme": [
+    "Projects page content, from the owner's ..\\Project Revisions\\Project Page Revisions\\Projects Page Revisions.txt and ..\\Portfolio Revision 2\\Revision 2 Instructions.txt. The array order is the display order.",
+    "id is the page address (projects.html?project=<id>). Image ids keep the original project names (projects/gas-adapter/..., projects/longhorn-coaster/..., projects/ox-plaque/...). Image values are ids from tools/media_map.json (see data/manifest.json).",
+    "title and context (the subtitle) show in the project list, at the top of the project, and in the browser tab.",
+    "Page order: overview (title, subtitle, summary, then specs on the left and the opening hero on the right, then the arrow), render, cam, photos. Text sits left and pictures right throughout; every image opens the expanded view on click.",
+    "specs: the rows to show, in order. Leave out a row that does not apply; never write TBD on this page. Role is always \"Design + CAM + Fabrication\".",
+    "render: { image, caption } or null (then the arrow points at the cam block).",
+    "cam: { label, notes (optional short lines above the setups), steps }. A step is { type: \"setup\", title, image, ops: [[Operation, Tool, Purpose], ...], caption } (caption shows under the image) or { type: \"photo\", heading (optional), image, caption } for a photo between setups.",
+    "photos: { label, items: [{ image, caption }] }, or { label, groups: [{ label, items }] } to split them under subheadings (V1 / V2). null leaves the section out.",
+    "Every image except the hero and the render shows in the same 4:3 frame, cropped to fill it. Add \"focus\" (a CSS object-position such as \"50% 30%\") to a step or photo item to keep its subject in the frame.",
+    "Copy is plain text. Wrap words in **double asterisks** to bold them (the operation names in CAM captions)."
+  ],
+  "projects": [
+    {
+      "id": "bed-delete-brackets",
+      "title": "Bed Delete Brackets",
+      "context": "Robby Gordon Speed El Diablo UTV",
+      "summary": "Two mirrored aluminum brackets that secure the bed fairings to the frame of a Robby Gordon Speed El Diablo UTV. The stock bed was removed to cut weight for racing, so the fairings needed a new, lightweight mount.",
+      "opening": "projects/bed-delete-bracket/final",
+      "specs": {
+        "Role": "Design + CAM + Fabrication",
+        "Material": "6061 aluminum",
+        "Process": "3-axis CNC milling",
+        "Machine": "Haas VF-2",
+        "Software": "Fusion 360 (CAD + CAM)",
+        "Setups": "2 per bracket",
+        "Stock": "9.125\" x 1.25\" x 1.25\" per bracket",
+        "Machining time": "35m per bracket",
+        "Finish": "As machined"
+      },
+      "render": {
+        "image": "projects/bed-delete-bracket/render",
+        "caption": "Right bracket designed first, then mirrored for the left. Triangular pockets cut weight without giving up rigidity, two rear holes mount to the frame, and the narrow nose clears the bedside fairing."
+      },
+      "cam": {
+        "label": "CAM",
+        "notes": ["Setups 3-4 repeat Setups 1-2 for the mirrored bracket."],
+        "steps": [
+          {
+            "type": "setup",
+            "title": "Setup 1: Top Face, Outer Profile, Pockets",
+            "image": "projects/bed-delete-bracket/cam-op1",
+            "ops": [
+              ["Drill", "0.2\" drill", "Frame mounting holes"],
+              ["Face", "2\" face mill", "Face top to height"],
+              ["Adaptive", "3/8\" flat end mill", "Rough outer shape"],
+              ["2D Pocket", "3/16\" flat end mill", "Rough triangular pockets to 75% depth"],
+              ["2D Contour", "3/16\" + 3/8\" flat end mills", "Finish pocket walls and outer profile"],
+              ["Chamfer", "45° chamfer mill", "Break edges"]
+            ],
+            "caption": "Shown: **2D Pocket and 2D Contour ops**. Offsetting the part 0.25\" from the stock bottom left clamping material, so the full outer profile could be cut in one setup."
+          },
+          {
+            "type": "photo",
+            "image": "projects/bed-delete-bracket/process-vise",
+            "focus": "50% 60%",
+            "caption": "After Setup 1: profile and pockets cut, still held by the clamping stock."
+          },
+          {
+            "type": "setup",
+            "title": "Setup 2: Flip, Pocket Finish, Top Slope",
+            "image": "projects/bed-delete-bracket/cam-op2",
+            "ops": [
+              ["Adaptive", "3/8\" flat end mill", "Clear clamping stock"],
+              ["Pocket", "3/16\" flat end mill", "Finish triangular pockets"],
+              ["2D Contour", "3/16\" + 3/8\" flat end mills", "Finish walls and profile"],
+              ["Parallel", "3/8\" + 1/4\" ball end mills", "Cut smooth top slope"],
+              ["Chamfer", "45° chamfer mill", "Break edges"]
+            ],
+            "caption": "Shown: **Pocket and 2D Contour ops**. Flipped 180°. The nose pocket was cut to full depth in Setup 1, so only three pockets are finished here."
+          }
+        ]
+      },
+      "photos": {
+        "label": "Iterations & Install",
+        "items": [
+          { "image": "projects/bed-delete-bracket/process-batch", "caption": "Bracket graveyard. Poor surface finish, dimensional errors, and part failures took several iterations to work out." },
+          { "image": "projects/bed-delete-bracket/installed-2", "caption": "Right bracket, installed." }
+        ]
+      }
+    },
+    {
+      "id": "fuel-cell-adapter",
+      "title": "Pyrotech Fuel Cell Adapter",
+      "context": "Robby Gordon Speed El Diablo UTV",
+      "summary": "A threaded barb fitting that moves the fuel fill point on a Speed El Diablo UTV somewhere easier to reach. Filling the 18-gallon Pyrotech fuel cell directly spilled fuel and slowed pit stops, a problem for BITD and SCORE racing.",
+      "opening": "projects/gas-adapter/final",
+      "specs": {
+        "Role": "Design + CAM + Fabrication",
+        "Material": "6061 aluminum",
+        "Process": "3-axis CNC milling",
+        "Machine": "Haas VF-2",
+        "Software": "Fusion 360 (CAD + CAM)",
+        "Setups": "3",
+        "Stock": "3.51\" x 3.4\" x 2.75\"",
+        "Machining time": "26m",
+        "Finish": "As machined"
+      },
+      "render": {
+        "image": "projects/gas-adapter/render",
+        "caption": "Built around three requirements: female threads matching the Pyrotech fuel cell, a barb sized for 2\" ID fuel hose, and a hex for easy install and removal. The threads are modeled geometry so they could be thread-milled directly."
+      },
+      "cam": {
+        "label": "CAM",
+        "steps": [
+          {
+            "type": "setup",
+            "title": "Setup 1: Thread Pocket, Hex, Threads, Origin Hole",
+            "image": "projects/gas-adapter/cam-setup1",
+            "ops": [
+              ["Face", "2\" shell mill", "Face top to hex height"],
+              ["Adaptive", "1/2\" flat end mill", "Rough female thread pocket"],
+              ["Pocket", "1/2\" flat end mill", "Rough barb bore"],
+              ["2D Contour", "1/2\" flat end mill", "Cut hex profile"],
+              ["Thread", "1/2\" thread mill", "Thread-mill right-hand female threads"],
+              ["Chamfer", "45° chamfer mill", "Chamfer hex lip"],
+              ["Drill", "1/2\" drill", "Origin hole for Setup 3"]
+            ],
+            "caption": "Shown: **Thread, 2D Contour, and Drill ops**. The drilled hole becomes the work origin for Setup 3, keeping the barb concentric with the threads."
+          },
+          {
+            "type": "setup",
+            "title": "Setup 2: Face Opposite End",
+            "image": "projects/gas-adapter/cam-setup2",
+            "ops": [
+              ["Face", "2\" shell mill", "Face opposite end to part height"]
+            ],
+            "caption": "Shown: **Face op**. Flipped 180° and zeroed off the stock corner."
+          },
+          {
+            "type": "setup",
+            "title": "Setup 3: Barb Fitting",
+            "image": "projects/gas-adapter/cam-setup3",
+            "ops": [
+              ["Adaptive", "1/2\" flat end mill", "Rough barb body and bore"],
+              ["Contour", "1/2\" flat end mill", "Finish barb exterior"],
+              ["Chamfer", "45° chamfer mill", "Chamfer barb lip so the hose slides on"]
+            ],
+            "caption": "Shown: **Adaptive op**. Zeroed off the Setup 1 drill hole for accurate location."
+          },
+          {
+            "type": "photo",
+            "heading": "What Went Wrong",
+            "image": "projects/gas-adapter/collet-crash",
+            "caption": "Collet crash. On the first attempt, the Setup 3 Adaptive op cut deeper than the shorter end mill could reach, and the collet holder crashed into the lip of the barb fitting. No bottom height was set to protect the tool and account for its length. Fix: a longer 1/2\" end mill."
+          }
+        ]
+      },
+      "photos": {
+        "label": "Finished Part & Install",
+        "items": [
+          { "image": "projects/gas-adapter/finished-upright", "caption": "Isometric view" },
+          { "image": "projects/gas-adapter/installed-2", "focus": "50% 30%", "caption": "Installed, close-up." }
+        ]
+      }
+    },
+    {
+      "id": "nightstand-organizer",
+      "title": "Nightstand Organizer",
+      "context": "Custom birthday gift for my sister",
+      "summary": "A custom nightstand organizer I designed and machined for my sister's birthday. It holds and charges her laptop, iPad, and iPhone, with pockets for small items and engraving that makes it hers.",
+      "opening": "projects/nightstand-organizer/final",
+      "specs": {
+        "Role": "Design + CAM + Fabrication",
+        "Material": "6061 aluminum",
+        "Process": "3-axis CNC milling",
+        "Machine": "Haas VF-2",
+        "Software": "Fusion 360 (CAD + CAM)",
+        "Setups": "3",
+        "Stock": "9.25\" x 8\" x 2\" (finished 9\" x 7\" x 1.45\")",
+        "Machining time": "2h 33m",
+        "Finish": "As machined"
+      },
+      "render": {
+        "image": "projects/nightstand-organizer/render",
+        "caption": "The sloped slots securely support devices at an angle while charging. A front pocket and a vertical domed compartment provide storage for small items, while personalized engravings of her name and floral designs decorate the angled front face."
+      },
+      "cam": {
+        "label": "CAM",
+        "steps": [
+          {
+            "type": "setup",
+            "title": "Setup 1: Facing, Pockets, Slopes, Engraving",
+            "image": "projects/nightstand-organizer/cam-setup1",
+            "ops": [
+              ["Face", "2\" face mill", "Face top to height"],
+              ["Adaptive", "1/2\" + 3/8\" flat end mills", "Rough pockets, slots, and outer contour"],
+              ["Flat + Pocket", "1/2\" + 1/4\" flat end mills", "Clean pocket floors and tight areas"],
+              ["Ramp", "3/8\" ball end mill", "Finish sloped slots, outer slope, and domed pocket"],
+              ["2D Contour", "1/2\" flat end mill", "Finish outer walls"],
+              ["Chamfer", "45° chamfer mill", "Break edges"],
+              ["Trace (engrave)", "1/4\" engraving tool", "Engrave text inside the main pocket"]
+            ],
+            "caption": "Shown: **Ramp and Trace ops**. Origin at the stock's bottom-left corner so Setup 2 lines up after the flip."
+          },
+          {
+            "type": "setup",
+            "title": "Setup 2: Facing the Bottom",
+            "image": "projects/nightstand-organizer/cam-setup2",
+            "ops": [
+              ["Face", "2\" shell mill", "Face bottom to final height"]
+            ],
+            "caption": "Shown: **Face op**. Flipped 180°. Small stepovers and stepdowns for a clean bottom finish."
+          },
+          {
+            "type": "setup",
+            "title": "Setup 3: Front Engraving",
+            "image": "projects/nightstand-organizer/cam-setup3",
+            "ops": [
+              ["Trace (engrave)", "1/8\" engraving tool", "Name and florals on the sloped front face"]
+            ],
+            "caption": "Shown: **Trace op**. The part was stood upright in the vise to reach the sloped front face. A 0.004\" tool tip offset kept the script and florals crisp. No stock remains at this stage."
+          }
+        ]
+      },
+      "photos": {
+        "label": "Finished Part",
+        "items": [
+          { "image": "projects/nightstand-organizer/in-use", "caption": "Sloped tablet slots in use." },
+          { "image": "projects/nightstand-organizer/detail-top", "caption": "Top view of the pocket engravings." }
+        ]
+      }
+    },
+    {
+      "id": "coaster-set",
+      "title": "Coaster Set",
+      "context": "Five coasters, three finishes",
+      "summary": "A set of five aluminum coasters designed to compare surface finishes. Three have brushed finishes with Ultimate Frisbee and Longhorn engravings. The other two showcase Flat and Pocket CNC toolpaths, which create distinct patterns around a raised Longhorn emblem.",
+      "opening": "projects/longhorn-coaster/final",
+      "specs": {
+        "Role": "Design + CAM + Fabrication",
+        "Material": "6061 aluminum",
+        "Process": "3-axis CNC milling",
+        "Machine": "Haas VF-2",
+        "Software": "Fusion 360 (CAD + CAM)",
+        "Setups": "2",
+        "Stock": "3.5\" x 3.5\" x 0.5\"",
+        "Machining time": "24m each",
+        "Finish": "Brushed (3) · Flat (bottom left) · Pocket (top left)"
+      },
+      "render": {
+        "image": "projects/longhorn-coaster/render",
+        "caption": "Raised Longhorn over a recessed field, framed by a thin wall. Short corner legs lift the coaster off the table, sized to balance durability with easy handling."
+      },
+      "cam": {
+        "label": "CAM",
+        "steps": [
+          {
+            "type": "setup",
+            "title": "Setup 1: Underside, Legs, Outer Profile",
+            "image": "projects/longhorn-coaster/cam-1",
+            "ops": [
+              ["Face", "2\" face mill", "Face underside"],
+              ["2D Adaptive", "3/8\" flat end mill", "Clear between the legs"],
+              ["2D Contour", "3/8\" flat end mill", "Cut legs and outer profile"],
+              ["Horizontal", "1/4\" flat end mill", "Finish floor between the legs"],
+              ["Chamfer", "45° chamfer mill", "Break edges"]
+            ],
+            "caption": "Shown: **2D Adaptive and 2D Contour ops**. A stock offset left 0.2\" below the part for vise clamping."
+          },
+          {
+            "type": "setup",
+            "title": "Setup 2: Top Face and Longhorn",
+            "image": "projects/longhorn-coaster/cam-2",
+            "ops": [
+              ["Face", "2\" face mill", "Remove the 0.2\" clamping stock"],
+              ["Adaptive", "3/8\" flat end mill", "Rough recessed field"],
+              ["Flat", "1/4\" flat end mill", "Finish field; its toolpath pattern is the final finish"],
+              ["Adaptive + 2D Pocket", "1/8\" flat end mill", "Detail around the Longhorn"],
+              ["Chamfer", "45° chamfer mill", "Break edges"]
+            ],
+            "caption": "Shown: **Flat and 2D Pocket ops**. Flat machines every surface perpendicular to the tool, and its rings trace out from the Longhorn."
+          }
+        ]
+      },
+      "photos": null
+    },
+    {
+      "id": "theta-chi-plaque",
+      "title": "Theta Chi Plaque",
+      "context": "Machined and painted wall plaque",
+      "summary": "A wall plaque designed and machined for my apartment roommates to commemorate our Theta Chi Fall 2023 pledge class. Raised aluminum lettering and a Longhorn emblem contrast against a red-painted background.",
+      "opening": "projects/ox-plaque/final",
+      "specs": {
+        "Role": "Design + CAM + Fabrication",
+        "Material": "6061 aluminum",
+        "Process": "3-axis CNC milling",
+        "Machine": "Haas VF-2",
+        "Software": "Fusion 360 (CAD + CAM)",
+        "Setups": "3",
+        "Stock": "9.5\" x 6.5\" x 0.77\"",
+        "Machining time": "58m",
+        "Finish": "Red painted field, raised faces machined bare"
+      },
+      "render": {
+        "image": "projects/ox-plaque/render",
+        "caption": "Custom letters and Longhorn stand 0.4\" tall on a 0.2\" floor, sized for tool clearance and rigidity during machining. A 0.4\" outer wall adds strength and frames the piece."
+      },
+      "cam": {
+        "label": "CAM",
+        "steps": [
+          {
+            "type": "setup",
+            "title": "Setup 1: Facing, Contour, Pocket Clearing",
+            "image": "projects/ox-plaque/cam-1",
+            "ops": [
+              ["Face", "2\" face mill", "Face top to height"],
+              ["Adaptive", "3/8\" flat end mill", "Clear outer contour and large pockets"],
+              ["Pocket", "1/4\" flat end mill", "Pockets the 3/8\" couldn't reach"],
+              ["Pocket", "1/8\" flat end mill", "Tight areas around the Longhorn and lettering"]
+            ],
+            "caption": "Shown: **Adaptive and Pocket ops**. Zeroed at the center of the stock bottom so the same origin carries through the flip."
+          },
+          {
+            "type": "setup",
+            "title": "Setup 2: Facing Off the Hat",
+            "image": "projects/ox-plaque/cam-2",
+            "ops": [
+              ["Face", "2\" face mill", "Remove the 0.15\" clamping \"hat\""]
+            ],
+            "caption": "Shown: **Face op**. Flipped 180°. Green is the hat that held the part in the vise during Setup 1."
+          },
+          {
+            "type": "photo",
+            "image": "projects/ox-plaque/process-coat",
+            "caption": "Edges taped off, then two coats of red on the front face."
+          },
+          {
+            "type": "setup",
+            "title": "Setup 3: Removing the Paint Layer",
+            "image": "projects/ox-plaque/cam-3",
+            "ops": [
+              ["Face", "2\" face mill", "Skim paint off the raised faces"]
+            ],
+            "caption": "Shown: **Face op**. Re-zeroed on the top face. A light finishing pass bared the letters and Longhorn against the red field."
+          }
+        ]
+      },
+      "photos": null
+    },
+    {
+      "id": "sheet-metal-wall-art",
+      "title": "Sheet Metal Wall Art",
+      "context": "Two Longhorn wall pieces, V1 & V2",
+      "summary": "Texas-shaped wall art designed in two versions. V1 was a personal project featuring polished stainless steel over a painted backing. I later designed a larger, three-layer version for the Theta Chi chapter house at UT Austin, featuring a raised Longhorn backlit by LEDs.",
+      "opening": "projects/sheet-metal-wall-art/final",
+      "specs": {
+        "Role": "Design + CAM + Fabrication",
+        "Material": "Stainless (V1); aluminum diamond plate on stainless (V2)",
+        "Process": "Plasma cutting, shearing, bonding",
+        "Machine": "Dynatorch plasma table, hydraulic shear",
+        "Software": "Fusion 360 (design), SheetCam (CAM)",
+        "Layers": "2 (V1), 3 (V2)",
+        "Finish": "Polished stainless or diamond plate over painted layers"
+      },
+      "render": null,
+      "cam": {
+        "label": "Design + CAM",
+        "steps": [
+          {
+            "type": "photo",
+            "image": "projects/sheet-metal-wall-art/v1-cam",
+            "caption": "Designed in Fusion 360, exported as a DXF, and programmed in SheetCam for the Dynatorch plasma table."
+          }
+        ]
+      },
+      "photos": {
+        "label": "Photos",
+        "groups": [
+          {
+            "label": "V1",
+            "items": [
+              { "image": "projects/sheet-metal-wall-art/v1-cut", "caption": "Stainless outer layer after plasma cutting." },
+              { "image": "projects/sheet-metal-wall-art/v1-finished", "caption": "Finished: outer layer bonded with industrial adhesive over a backing sheared to size and painted." }
+            ]
+          },
+          {
+            "label": "V2",
+            "items": [
+              { "image": "projects/sheet-metal-wall-art/v2-cut", "focus": "50% 40%", "caption": "Design scaled up and cut from a 4' x 5' sheet of aluminum diamond plate." },
+              { "image": "projects/sheet-metal-wall-art/v2-standoffs", "focus": "50% 40%", "caption": "The Longhorn cutout became the raised third layer, set on studs bonded with JB Weld and painted burnt orange." },
+              { "image": "projects/sheet-metal-wall-art/installed", "caption": "Installed at the Theta Chi house. LEDs behind the Longhorn reflect off the white first layer and the diamond plate." }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found | Peter Vlahakis</title>
+  <meta name="description" content="That page does not exist on Peter Vlahakis's portfolio site.">
+  <meta name="robots" content="noindex">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Peter Vlahakis">
+  <meta property="og:title" content="Page not found | Peter Vlahakis">
+  <meta property="og:description" content="That page does not exist.">
+  <meta property="og:image" content="https://petervlahakis.com/assets/img/og.jpg">
+  <script>
+    // GitHub Pages serves this file for any missing path. The relative links below only
+    // resolve from the site root, so a missing nested path steps back up to it first.
+    (function () {
+      var depth = location.pathname.split('/').length - 2;
+      if (depth > 0) location.replace(new Array(depth + 1).join('../') + '404.html');
+    })();
+  </script>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="404">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="nav" aria-label="Primary" data-open="false">
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-list">Menu</button>
+    <ul class="nav__list" id="nav-list">
+      <li><a class="nav__link" href="index.html">Home</a></li>
+      <li><a class="nav__link" href="baja.html">Baja SAE</a></li>
+      <li><a class="nav__link" href="projects.html">Projects</a></li>
+      <li><a class="nav__link" href="index.html#about">About</a></li>
+      <li><a class="nav__link" href="index.html#resume">Resume</a></li>
+    </ul>
+  </nav>
+
+  <main class="message" id="main">
+    <p class="label">404</p>
+    <h1>Page not found</h1>
+    <p><a href="index.html">Back to the home page</a></p>
+  </main>
+
+  <script src="js/scramble.js" defer></script>
+  <script src="js/nav.js" defer></script>
+</body>
+</html>

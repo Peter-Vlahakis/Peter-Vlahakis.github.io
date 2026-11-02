@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://petervlahakis.com/sitemap.xml

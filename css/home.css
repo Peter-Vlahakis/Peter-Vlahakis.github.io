@@ -1,0 +1,503 @@
+/* Home: hero, About, Resume, footer. */
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  height: 100svh;
+  min-height: 420px;
+  overflow: hidden;
+}
+
+.hero__media,
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__media {
+  z-index: -2;
+}
+
+.hero__poster,
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The video fades in over the poster once it can play through */
+.hero__video {
+  opacity: 0;
+  transition: opacity var(--dur-fade) var(--ease-out);
+}
+
+.hero__video.is-ready {
+  opacity: 1;
+}
+
+.hero__scrim {
+  z-index: -1;
+  background: var(--hero-scrim);
+}
+
+.hero__content {
+  position: relative;
+  padding-inline: var(--gutter);
+  text-align: center;
+}
+
+/* The stronger part of the scrim: a full-width band that tracks the text block at any viewport size */
+.hero__content::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: calc((var(--hero-scrim-feather) + var(--space-2)) * -1) -100vw;
+  background: var(--hero-band);
+  pointer-events: none;
+}
+
+.hero__name {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 0.26em;
+  font-size: var(--fs-hero);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  text-shadow: var(--hero-text-halo);
+}
+
+/* Hidden until the load-in scramble starts (only when scripts run) */
+.js .hero__word {
+  visibility: hidden;
+}
+
+.js .hero__word.is-in {
+  visibility: visible;
+}
+
+.hero__tagline {
+  margin-top: var(--space-4);
+  font-size: clamp(1rem, 2.1vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-shadow: var(--hero-text-halo);
+}
+
+.hero__pause {
+  position: absolute;
+  right: var(--gutter);
+  bottom: var(--space-5);
+  padding: var(--space-2) var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.hero__pause:hover,
+.hero__pause:focus-visible {
+  opacity: 1;
+}
+
+/* Where the clip was filmed, bottom left */
+.hero__place {
+  position: absolute;
+  left: var(--gutter);
+  bottom: var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding-block: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.hero__pin {
+  flex: none;
+  width: 10px;
+  height: auto;
+  fill: currentColor;
+}
+
+/* Down arrow to About, bottom center */
+.hero__down {
+  position: absolute;
+  left: 50%;
+  bottom: var(--space-4);
+  translate: -50% 0;
+  display: block;
+  padding: var(--space-3);
+  color: var(--text);
+  opacity: 0.85;
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.hero__down:hover,
+.hero__down:focus-visible {
+  opacity: 1;
+}
+
+.hero__down svg {
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Phones: lift the arrow clear of the location and Pause */
+@media (max-width: 599.98px) {
+  .hero__down {
+    bottom: calc(var(--space-5) + 36px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__down svg {
+    animation: hero-nudge 2.4s var(--ease-in-out) infinite;
+  }
+}
+
+@keyframes hero-nudge {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(5px); }
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  max-width: 1320px;
+  margin-inline: auto;
+  padding: var(--space-9) var(--gutter) var(--space-8);
+}
+
+.section__label {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ---------- About: default tones only (white and the site's greys) ---------- */
+
+/* Header: headshot left; name, subtitle, contact buttons, and the paragraph right */
+.about__head {
+  display: grid;
+  grid-template-columns: minmax(150px, 240px) minmax(0, 1fr);
+  gap: var(--space-5) clamp(var(--space-5), 4vw, var(--space-7));
+  align-items: center;
+}
+
+/* The two rows share any spare height, so the name block and paragraph stay together beside the photo */
+@media (min-width: 768px) {
+  .about__portrait {
+    grid-row: 1 / span 2;
+  }
+
+  .about__id {
+    align-self: end;
+  }
+
+  .about__bio {
+    grid-column: 2;
+    align-self: start;
+  }
+}
+
+.about__bio .about__text {
+  margin-top: 0;
+}
+
+/* A thin frame a little off the photo */
+.about__portrait img {
+  width: 100%;
+  outline: 1px solid var(--rule-strong);
+  outline-offset: 6px;
+}
+
+.about__portrait img:not([src]) {
+  visibility: hidden;
+}
+
+.about__name {
+  font-size: clamp(2rem, 4.4vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.about__subtitle {
+  margin-top: var(--space-3);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.about__sep {
+  color: var(--text);
+}
+
+.about__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+/* Every button in the row takes the height of the tallest */
+.about__links li {
+  display: flex;
+}
+
+/* Small outlined buttons that fill white on hover */
+.about__button {
+  display: inline-block;
+  padding: 7px var(--space-4);
+  border: 1px solid var(--rule-strong);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
+}
+
+.about__button:hover,
+.about__button:focus-visible {
+  border-color: var(--text);
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* LinkedIn: a square button holding the "in" logo, one text line tall like the email button. White at rest;
+   on hover and focus the logo turns LinkedIn blue and its letters show the white fill behind them. */
+.about__button--icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+}
+
+.about__icon {
+  display: block;
+  width: 1lh;
+  height: 1lh;
+  fill: currentColor;
+}
+
+.about__button--icon:hover,
+.about__button--icon:focus-visible {
+  color: var(--linkedin-blue);
+}
+
+/* Arrow down to the gallery, right under the header row */
+.about__next {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-1);
+  width: max-content;
+  margin: var(--space-6) auto 0;
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.about__next:hover,
+.about__next:focus-visible {
+  color: var(--text);
+}
+
+.about__next-icon {
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .about__next-icon {
+    animation: hero-nudge 2.4s var(--ease-in-out) infinite;
+  }
+}
+
+/* Life in Motion: heading, one-line intro, then the gallery */
+.about__motion {
+  margin-top: var(--space-6);
+}
+
+.about__heading {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+/* A short solid band under each heading, the shape of the stripe under the Baja title */
+.about__heading::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 5px;
+  margin-top: var(--space-3);
+  background: var(--text);
+}
+
+.about__text {
+  max-width: var(--measure);
+  margin-top: var(--space-4);
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.about__text + .about__text {
+  margin-top: var(--space-3);
+}
+
+.about__text strong {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.about__inline-link {
+  color: var(--text);
+  text-decoration-color: var(--text-faint);
+  transition: text-decoration-color var(--dur-fast) var(--ease-out);
+}
+
+.about__inline-link:hover {
+  text-decoration-color: var(--text);
+}
+
+/*
+ * Gallery: justified rows built by home.js. Each photo grows in proportion to its shape, so every row
+ * runs edge to edge at one height and nothing is cropped. No captions.
+ */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  scroll-margin-top: var(--space-4);
+}
+
+.gallery__row {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.gallery__tile {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.gallery__tile .zoom {
+  height: 100%;
+}
+
+.gallery__tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-zoom) var(--ease-out);
+}
+
+.gallery__tile img:not([src]) {
+  visibility: hidden;
+}
+
+/* Hover: a slight zoom only */
+.gallery__tile .zoom:hover img {
+  opacity: 1;
+  transform: scale(var(--zoom));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery__tile .zoom:hover img {
+    transform: none;
+  }
+}
+
+/* ---------- Resume ---------- */
+
+.resume__frame {
+  margin-top: var(--space-6);
+}
+
+.resume__frame object {
+  display: block;
+  width: 100%;
+  height: 80vh;
+  min-height: 420px;
+  border: 1px solid var(--rule);
+}
+
+/* Hold the embed's space before it loads, so the Resume link lands in the right place */
+@media (min-width: 768px) {
+  .js .resume__frame {
+    min-height: max(80vh, 420px);
+  }
+}
+
+.resume__fallback {
+  color: var(--text-muted);
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  padding: var(--space-6) var(--gutter);
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+@media (max-width: 767.98px) {
+  .section {
+    padding-block: var(--space-8) var(--space-7);
+  }
+
+  /* The header row stays a row: a smaller headshot beside the name, the paragraph full width below */
+  .about__head {
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: var(--space-5);
+    align-items: start;
+  }
+
+  .about__bio {
+    grid-column: 1 / -1;
+  }
+
+  .about__portrait img {
+    outline-offset: 4px;
+  }
+
+  .about__subtitle {
+    font-size: var(--fs-sm);
+  }
+}

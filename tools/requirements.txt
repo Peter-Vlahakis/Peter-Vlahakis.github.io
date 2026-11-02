@@ -1,0 +1,7 @@
+# Media import + local tooling only. The site itself has no build step.
+# Install into the project venv:  .venv\Scripts\python -m pip install -r tools\requirements.txt
+Pillow
+pillow-heif
+imageio-ffmpeg
+# Optional: only used to read the resume PDF while drafting copy.
+PyMuPDF

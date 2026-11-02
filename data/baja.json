@@ -1,0 +1,307 @@
+{
+  "_readme": [
+    "Baja SAE page, top to bottom. The timeline on the left is built from the same data.",
+    "link: the Longhorn Baja Racing logo in the nav row (Baja page only); opens the team site in a new tab.",
+    "overview: the page header and the opening section. roles_detail points are strings, or { title, items } groups.",
+    "groups: the two main timeline headings, each with its sections in order.",
+    "A section has: id (its #anchor), label (timeline text), title, optional chip (attribution label), optional intro, and blocks.",
+    "Block types: points (bullets), goals (numbered goals), specs (label/value rows), table (head + rows), list (short items in columns), text, sub (a subheading), media (images), video.",
+    "media items: image (an id from tools/media_map.json), optional caption, optional native: true (never shown larger than the image's own size).",
+    "media layouts: grid (same-size 3:4 tiles, up to three per row; a photo of another shape is cropped to fit, and the expanded view shows all of it), row (one line, every image the same height and uncropped; \"height\": \"tile\" keeps it no taller than a grid tile), feature, pair, or stack.",
+    "Every image opens in an expanded view on click: the 2560 px still where build_media.py made one, else the largest size, with its caption and credit.",
+    "A photo's credit comes from tools/media_map.json and shows in the image's bottom-left corner (George Lawrence's competition photos must keep theirs).",
+    "Animated images (FEA) play with a Pause button and start paused under reduced motion. The video plays muted while on screen.",
+    "Copy is a plain string (from the owner's Baja Page.txt or Baja Draft 2.txt) or { text, draft: true } (drafted during the build; rewrite and drop the flag).",
+    "model: the one interactive 3D element. It renders in the section marked model: true once enabled is true and both files exist; nothing 3D loads before that."
+  ],
+  "link": {
+    "href": "https://longhornbajaracing.com/",
+    "image": "baja/lbr-logo",
+    "label": "Longhorn Baja Racing website"
+  },
+  "model": {
+    "enabled": false,
+    "src": "assets/models/chassis.glb",
+    "script": "js/vendor/model-viewer.min.js",
+    "alt": "Interactive 3D model of the Baja SAE chassis"
+  },
+  "overview": {
+    "id": "overview",
+    "label": "Overview",
+    "eyebrow": "Peter Vlahakis",
+    "title": "Longhorn Baja Racing",
+    "roles": "Founding Member · Vice Captain · Chassis Lead · Manufacturing Lead · Driver",
+    "heading": "UT Austin Baja SAE – Inaugural Season",
+    "intro": "In Fall 2025, I joined Longhorn Baja Racing as a founding member, helping bring Baja SAE back to UT Austin for the first time since the 1980s. In our first season, we designed and built a single-seat off-road race car and successfully raced it at Baja SAE Ohio 2026.",
+    "stats": [
+      { "value": "5+", "text": "Led chassis design and fabrication with a team of 5+ engineers, using SolidWorks and ANSYS" },
+      { "value": "10+", "text": "Directed manufacturing with 10+ members, turning CAD into race-ready parts for every subsystem" },
+      { "value": "$35K+", "text": "Led sponsor outreach that raised $35,000+ in funding and in-kind support" },
+      { "value": "175+", "text": "Helped scale the team from 10 founding members to 175+ students across 11 subteams" }
+    ],
+    "photos": ["baja/overview/car", "baja/overview/hill-climb", "baja/overview/pits", "baja/overview/welding"],
+    "roles_detail": [
+      {
+        "title": "Chassis Lead",
+        "target": "chassis-cad",
+        "points": [
+          "Chassis design in SolidWorks",
+          "MATLAB for tube material selection",
+          "FEA in ANSYS",
+          "Tube notching, fixturing, and TIG welding"
+        ]
+      },
+      {
+        "title": "Manufacturing Lead",
+        "target": "control-trailing-arms",
+        "points": [
+          { "title": "Designed & fabricated", "items": [
+            "All mounting tabs",
+            "Steering column, support, and rack mount",
+            "Body panels and firewall"
+          ] },
+          { "title": "Fabricated", "items": [
+            "Control arms and trailing arms",
+            "Radius rods and tie rods"
+          ] }
+        ]
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "chassis-lead",
+      "label": "Chassis Lead",
+      "sections": [
+        {
+          "id": "chassis-cad",
+          "label": "Chassis CAD Design",
+          "title": "Chassis CAD Design",
+          "chip": "Design + Analysis + Fabrication",
+          "model": true,
+          "intro": "Designed in SolidWorks around three first-year goals:",
+          "blocks": [
+            { "type": "goals", "items": [
+              "Pass Baja SAE technical inspection",
+              "Streamlined and simple chassis manufacturing",
+              "Flexibility for drivetrain and suspension integration"
+            ] },
+            { "type": "specs", "rows": [
+              ["Material", "4130N steel"],
+              ["Primary tubes", "1.25\" x 0.065\""],
+              ["Secondary tubes", "1\" x 0.035\""],
+              ["Final frame weight", "71.44 lb"],
+              ["Roll cage inspection", "Passed on the first attempt at competition"]
+            ] },
+            { "type": "media", "layout": "feature", "items": [
+              { "image": "baja/cad/chassis-final" }
+            ] },
+            { "type": "media", "layout": "row", "items": [
+              { "image": "baja/cad/driver-model", "native": true },
+              { "image": "baja/cad/driver-model-2", "native": true }
+            ] }
+          ]
+        },
+        {
+          "id": "tube-selection",
+          "label": "Tube Selection",
+          "title": "Tube Selection",
+          "chip": "Design + Analysis + Fabrication",
+          "intro": "Used MATLAB programming to generate a tube size and material analysis for the chassis.",
+          "blocks": [
+            { "type": "points", "items": [
+              "Swept tube outer diameter (1.0\"–2.5\") and wall thickness (0.035\"–0.125\") across AISI 1018, AISI 4130N, and Docol R8 steel",
+              "Computed bending stiffness and bending strength for each combination and compared them to the Baja SAE equivalent minimums",
+              "Filtered out every result below the minimums"
+            ] },
+            { "type": "specs", "rows": [
+              ["Min. bending stiffness", "Kb ≥ 2620 N·m²"],
+              ["Min. bending strength", "Sb ≥ 374 N·m"]
+            ] },
+            { "type": "media", "layout": "pair", "items": [
+              { "image": "baja/tube-selection/stiffness", "native": true, "caption": "Bending stiffness vs. area" },
+              { "image": "baja/tube-selection/strength", "native": true, "caption": "Bending strength vs. area" }
+            ] }
+          ]
+        },
+        {
+          "id": "fea-validation",
+          "label": "FEA Validation",
+          "title": "FEA Validation",
+          "chip": "Design + Analysis + Fabrication",
+          "intro": "Static structural FEA in ANSYS on the chassis under front impact, side impact, and front rollover load cases. The same analysis validated the front bulkhead geometry and confirmed that the rear packaging and engine mount tubes could carry the full powertrain loads.",
+          "blocks": [
+            { "type": "table", "head": ["Load case", "Load"], "rows": [
+              ["Front collision (tow hook only)", "10,000 lbf frontal"],
+              ["Side & Frontal Impact", "10,000 lbf frontal + 5,000 lbf side"],
+              ["Front rollover", "5,000 lbf roll strength, 1 m fall"]
+            ] },
+            { "type": "media", "layout": "stack", "items": [
+              { "image": "baja/fea/front-collision-tow-hook", "caption": "Front collision, tow hook only · 10,000 lbf" },
+              { "image": "baja/fea/side-impact", "caption": "Side & Frontal Impact · 10,000 lbf frontal + 5,000 lbf side" },
+              { "image": "baja/fea/front-rollover", "caption": "Front rollover · 5,000 lbf, 1 m fall" }
+            ] }
+          ]
+        },
+        {
+          "id": "chassis-fabrication",
+          "label": "Chassis Fabrication",
+          "title": "Chassis Fabrication",
+          "chip": "Design + Analysis + Fabrication",
+          "intro": { "draft": true, "text": "Built in house, from a half-scale practice model to the painted frame." },
+          "blocks": [
+            { "type": "points", "items": [
+              "Lead welder for the chassis, alongside two other chassis members",
+              "All tubes TIG welded",
+              "All straight members notched in house with a JD2 tube notcher",
+              "Bent members outsourced to VR3 Engineering for CNC bending and notching"
+            ] },
+            { "type": "sub", "text": "Half-scale practice model" },
+            { "type": "text", "text": "With sponsor United Mechanical Corp, I fabricated a half-scale model of the chassis floor and roll hoop as training for the full-scale build: practice in fixturing, tube notching, and welding." },
+            { "type": "media", "layout": "grid", "items": [
+              { "image": "baja/scale-model/fixturing" },
+              { "image": "baja/scale-model/floor" },
+              { "image": "baja/scale-model/roll-hoop" }
+            ] },
+            { "type": "sub", "text": "Full-scale build" },
+            { "type": "media", "layout": "grid", "items": [
+              { "image": "baja/chassis-fab/roll-hoop-notch", "caption": "Fitting Notched Roll Hoop to 18°" },
+              { "image": "baja/chassis-fab/roll-cage", "caption": "Finished primary roll cage" },
+              { "image": "baja/chassis-fab/tube-fit", "caption": "Jigging with Stronghand 5/8\" fixtures" },
+              { "image": "baja/chassis-fab/welders", "caption": "The three welders" },
+              { "image": "baja/chassis-fab/welding-peter", "caption": "Welding on the chassis" },
+              { "image": "baja/chassis-fab/frame-in-shop", "caption": "Finished chassis & suspension components prepped for painting" },
+              { "image": "baja/chassis-fab/finished-1", "caption": "Primed and painted" },
+              { "image": "baja/chassis-fab/finished-2", "caption": "Primed and painted, side view" }
+            ] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manufacturing-lead",
+      "label": "Manufacturing Lead",
+      "sections": [
+        {
+          "id": "control-trailing-arms",
+          "label": "Control Arms & Trailing Arms",
+          "title": "Control Arms & Trailing Arms",
+          "chip": "Fabrication",
+          "blocks": [
+            { "type": "sub", "text": "Upper & lower control arms" },
+            { "type": "specs", "rows": [
+              ["Tubing", "4130N, 1\" x 0.065\""],
+              ["Chassis connection", "Outer nylon bushings with inner oil-impregnated bronze sleeve bearings"],
+              ["Upright connection", "Pegasus spherical bearings and weld cups"]
+            ] },
+            { "type": "points", "items": [
+              "Straight tubing coped with JD2 notcher",
+              "Bent tubing CNC bent & coped by VR3 Engineering",
+              "All tubing fixtured and TIG welded in house"
+            ] },
+            { "type": "media", "layout": "grid", "items": [
+              { "image": "baja/arms/upper-control-arms", "caption": "Upper control arms" },
+              { "image": "baja/arms/lower-control-arm", "caption": "Lower control arm" },
+              { "image": "baja/arms/arms-installed", "caption": "Installed Control Arms" }
+            ] },
+            { "type": "sub", "text": "Trailing arms" },
+            { "type": "specs", "rows": [
+              ["Trussing", "4130N, 1\" x 0.065\", with 1/8\" 1018 plating"],
+              ["Chassis connection", "3/4\" x 1-1/2\" x 0.083\" rectangular tube, 1-1/2\" OD 4130 weld nut, 5/16\"-18 heim joint"]
+            ] },
+            { "type": "points", "items": [
+              "All tubing notched, fixtured, and TIG welded in house",
+              "Custom “LBR” cutouts using the Dynatorch plasma table"
+            ] },
+            { "type": "media", "layout": "grid", "items": [
+              { "image": "baja/arms/trailing-truss-1", "caption": "Trussing" },
+              { "image": "baja/arms/trailing-truss-2", "caption": "Trussing" },
+              { "image": "baja/arms/trailing-connection", "caption": "Chassis connection" },
+              { "image": "baja/arms/trailing-final-1", "caption": "Finished trailing arms" },
+              { "image": "baja/arms/trailing-final-2", "caption": "Finished trailing arms, painted" }
+            ] }
+          ]
+        },
+        {
+          "id": "tabs-body-panels",
+          "label": "Tabs & Body Panels",
+          "title": "Tabs & Body Panels",
+          "chip": "Design + Fabrication",
+          "blocks": [
+            { "type": "sub", "text": "Body panels, firewall & skid plate" },
+            { "type": "specs", "rows": [
+              ["Body panels & firewall", "0.032\" Al 5052-H32, cut with hydraulic shears and hand snips"],
+              ["Skid plate", "0.125\" Al 5052-H32, hand cut with an angle grinder, fasteners countersunk into the plate"],
+              ["Firewall", "Grommeted cutouts for the throttle cable, brake lines, and shoulder harness straps"],
+              ["Mounting", "Kartek quarter-turn fasteners"]
+            ] },
+            { "type": "media", "layout": "grid", "items": [
+              { "image": "baja/tabs/skid-plate", "caption": "Skid plate fabrication" },
+              { "image": "baja/tabs/panel-fitment", "caption": "Body panels during initial installation and fitment" },
+              { "image": "baja/tabs/firewall", "caption": "Firewall close-up" }
+            ] },
+            { "type": "media", "layout": "row", "height": "tile", "items": [
+              { "image": "baja/tabs/side-panel", "caption": "Finished side body panels" },
+              { "image": "baja/tabs/number-plate", "caption": "Rear number plates, hand cut and fabricated at competition" }
+            ] },
+            { "type": "sub", "text": "Mounting tabs" },
+            { "type": "specs", "rows": [
+              ["Material", "1/8\" 1018 steel"],
+              ["Process", "Designed with SolidWorks sheet metal, cut on the Dynatorch plasma table, bent on a manual press brake"],
+              ["Welding", "One of three welders who welded every tab onto the car"]
+            ] },
+            { "type": "list", "title": "Tabs I designed, cut, and (mostly) welded", "items": [
+              "Harness lap belt double shear",
+              "Seat",
+              "Fire extinguisher mount",
+              "Upper and lower shock mounts",
+              "Trailing arm mount",
+              "Control arm mount",
+              "Steering rack mount",
+              "Gas tank mount",
+              "Rear tow hook",
+              "Differential mount",
+              "Jackshaft pillow block mount"
+            ] },
+            { "type": "video", "video": "baja/tabs/plasma-cutting", "caption": "Cutting tabs on the Dynatorch plasma table" },
+            { "type": "media", "layout": "grid", "items": [
+              { "image": "baja/chassis-fab/cut-tabs", "caption": "A batch of tabs after cutting and press-brake bending" },
+              { "image": "baja/tabs/upper-shock", "caption": "Upper shock tabs welded" },
+              { "image": "baja/tabs/lower-shock", "caption": "Lower shock tabs welded with the lower control arm plate" }
+            ] }
+          ]
+        },
+        {
+          "id": "steering",
+          "label": "Steering",
+          "title": "Steering",
+          "chip": "Design + Fabrication",
+          "blocks": [
+            { "type": "sub", "text": "Steering rack fabrication" },
+            { "type": "points", "items": [
+              "Fixtured the Narco steering rack in position with a 3D-printed PLA jig",
+              "Modified the height of the rack's heim joint misalignment spacers",
+              "Custom aluminum steering rack spacers turned on the lathe",
+              "Fabricated and welded 1018 steel mounting tabs"
+            ] },
+            { "type": "sub", "text": "Steering column design and fabrication" },
+            { "type": "points", "items": [
+              "Designed a solid shaft connection to the rack for robustness and manufacturability",
+              "Milled spring pin holes to fit the steering column tube onto the Narco rack stub",
+              "Jigged, notched, and welded the steering column support",
+              "Turned down the column's outer diameter to interface with its oil-impregnated journal bearings"
+            ] },
+            { "type": "media", "layout": "row", "items": [
+              { "image": "baja/steering/rack-front", "caption": "Steering rack from the front of the car" },
+              { "image": "baja/steering/column-support", "caption": "Steering column support fitment" }
+            ] },
+            { "type": "media", "layout": "row", "items": [
+              { "image": "baja/steering/rack-side", "caption": "Rack, clevis, column stub pin holes, and mounting" },
+              { "image": "baja/steering/rack-top", "caption": "Top view of the rack" }
+            ] }
+          ]
+        }
+      ]
+    }
+  ]
+}

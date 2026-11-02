@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Peter Vlahakis | Aspiring Automotive Engineer</title>
+  <meta name="description" content="Engineering portfolio of Peter Vlahakis, mechanical engineering student at UT Austin: Baja SAE chassis design and fabrication, and CNC-machined parts.">
+  <link rel="canonical" href="https://petervlahakis.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Peter Vlahakis">
+  <meta property="og:title" content="Peter Vlahakis | Aspiring Automotive Engineer">
+  <meta property="og:description" content="Engineering portfolio: Baja SAE chassis design and fabrication, and CNC-machined parts.">
+  <meta property="og:url" content="https://petervlahakis.com/">
+  <meta property="og:image" content="https://petervlahakis.com/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dirt bike rider climbing a sandstone dome, seen from above">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="nav" aria-label="Primary" data-open="false">
+    <!-- Phones, Home only: the two other pages stay in the bar beside Menu -->
+    <ul class="nav__bar">
+      <li><a class="nav__link" href="baja.html">Baja SAE</a></li>
+      <li><a class="nav__link" href="projects.html">Projects</a></li>
+    </ul>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-list">Menu</button>
+    <ul class="nav__list" id="nav-list">
+      <li><a class="nav__link" href="index.html" aria-current="page">Home</a></li>
+      <li><a class="nav__link" href="baja.html">Baja SAE</a></li>
+      <li><a class="nav__link" href="projects.html">Projects</a></li>
+      <li><a class="nav__link" href="index.html#about">About</a></li>
+      <li><a class="nav__link" href="index.html#resume">Resume</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <section class="hero" id="top" aria-label="Introduction">
+      <div class="hero__media">
+        <img class="hero__poster" src="assets/video/hero-poster.webp" width="1920" height="1080" alt="" fetchpriority="high">
+        <video class="hero__video" muted loop playsinline autoplay disablepictureinpicture tabindex="-1" aria-hidden="true"
+               data-src-large="assets/video/hero-1080.mp4" data-src-small="assets/video/hero-720.mp4"></video>
+      </div>
+      <div class="hero__scrim"></div>
+      <div class="hero__content">
+        <h1 class="hero__name" aria-label="Peter Vlahakis"><span class="hero__word" aria-hidden="true">Peter</span> <span class="hero__word" aria-hidden="true">Vlahakis</span></h1>
+        <p class="hero__tagline">Aspiring Automotive Engineer</p>
+      </div>
+      <p class="hero__place">
+        <svg class="hero__pin" viewBox="0 0 12 16" width="12" height="16" aria-hidden="true" focusable="false"><path d="M6 0.75a5.25 5.25 0 0 0-5.25 5.25c0 3.9 5.25 9.25 5.25 9.25s5.25-5.35 5.25-9.25A5.25 5.25 0 0 0 6 0.75zm0 7.25a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
+        Swing Arm City, Utah
+      </p>
+      <a class="hero__down" href="#about" aria-label="Scroll to About">
+        <svg viewBox="0 0 44 16" width="44" height="16" aria-hidden="true" focusable="false"><path d="M2 2.5 22 13.5 42 2.5"/></svg>
+      </a>
+      <button class="hero__pause" type="button" hidden>Pause</button>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <h2 class="label section__label" id="about-title">About</h2>
+      <!-- Filled from data/site.json by js/home.js: headshot, name, subtitle, contact links, the paragraph,
+           then Life in Motion and the gallery -->
+      <div class="about__head">
+        <figure class="about__portrait" id="portrait"></figure>
+        <div class="about__id" id="about-id"></div>
+        <div class="about__bio" id="about-bio"></div>
+      </div>
+      <a class="about__next" href="#gallery">
+        <span class="about__next-label">Gallery</span>
+        <svg class="about__next-icon" viewBox="0 0 44 16" width="44" height="16" aria-hidden="true" focusable="false"><path d="M2 2.5 22 13.5 42 2.5"/></svg>
+      </a>
+      <div class="about__motion" id="about-motion"></div>
+      <div class="gallery" id="gallery" aria-label="Gallery" role="region"></div>
+    </section>
+
+    <section class="section resume" id="resume" aria-labelledby="resume-title">
+      <h2 class="label section__label" id="resume-title">Resume</h2>
+      <p><a class="button" href="assets/resume/peter-vlahakis-resume.pdf" download="Peter-Vlahakis-Resume.pdf">Download resume (PDF)</a></p>
+      <div class="resume__frame" id="resume-frame" data-src="assets/resume/peter-vlahakis-resume.pdf">
+        <p class="resume__fallback"><a href="assets/resume/peter-vlahakis-resume.pdf" target="_blank" rel="noopener noreferrer">Open the resume (PDF)</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Peter Vlahakis <span aria-hidden="true">·</span> <span data-email>pvlahakis [at] utexas [dot] edu</span> <span aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/peter-vlahakis-40aa31334" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+  </footer>
+
+  <noscript><p class="notice">This site loads its content with JavaScript. The resume is available as a <a href="assets/resume/peter-vlahakis-resume.pdf">PDF</a>.</p></noscript>
+
+  <script src="js/scramble.js" defer></script>
+  <script src="js/media.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/home.js" defer></script>
+</body>
+</html>

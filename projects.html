@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Peter Vlahakis</title>
+  <meta name="description" content="Machined and fabricated parts by Peter Vlahakis: designed, programmed in CAM, and made start to finish.">
+  <link rel="canonical" href="https://petervlahakis.com/projects.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Peter Vlahakis">
+  <meta property="og:title" content="Projects | Peter Vlahakis">
+  <meta property="og:description" content="Machined and fabricated parts: designed, programmed in CAM, and made start to finish.">
+  <meta property="og:url" content="https://petervlahakis.com/projects.html">
+  <meta property="og:image" content="https://petervlahakis.com/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dirt bike rider climbing a sandstone dome, seen from above">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/projects.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="projects" class="page-fixed">
+  <a class="skip-link" href="#pane">Skip to project</a>
+
+  <nav class="nav" aria-label="Primary" data-open="false">
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-list">Menu</button>
+    <ul class="nav__list" id="nav-list">
+      <li><a class="nav__link" href="index.html">Home</a></li>
+      <li><a class="nav__link" href="baja.html">Baja SAE</a></li>
+      <li><a class="nav__link" href="projects.html" aria-current="page">Projects</a></li>
+      <li><a class="nav__link" href="index.html#about">About</a></li>
+      <li><a class="nav__link" href="index.html#resume">Resume</a></li>
+    </ul>
+  </nav>
+
+  <main class="shell" id="main">
+    <nav class="shell__side plist" aria-label="Projects">
+      <ul class="plist__items" id="project-list"></ul>
+    </nav>
+    <!-- Phones: the project list becomes one dropdown bar above the project (css/projects.css) -->
+    <nav class="pdrop" id="pdrop" aria-label="Projects">
+      <button class="pdrop__button" type="button" aria-expanded="false" aria-controls="pdrop-list">
+        <span class="pdrop__name" id="pdrop-name"></span>
+        <span class="pdrop__count" id="pdrop-count"></span>
+        <svg class="pdrop__caret" viewBox="0 0 12 8" width="12" height="8" aria-hidden="true" focusable="false"><path d="M1 1.5 6 6.5 11 1.5"/></svg>
+      </button>
+      <ul class="pdrop__list" id="pdrop-list" hidden></ul>
+    </nav>
+    <article class="shell__pane pane" id="pane" tabindex="0" aria-label="Selected project"></article>
+  </main>
+
+  <noscript><p class="notice">This page loads its content with JavaScript.</p></noscript>
+
+  <script src="js/scramble.js" defer></script>
+  <script src="js/media.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/projects.js" defer></script>
+</body>
+</html>

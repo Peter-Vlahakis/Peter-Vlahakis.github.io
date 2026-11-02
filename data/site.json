@@ -1,0 +1,53 @@
+{
+  "_readme": [
+    "Home page content: the About section. Image values are ids from tools/media_map.json (see data/manifest.json).",
+    "Text is from the owner's ..\\Portfolio Revision 3\\Revision 3 Instructions.txt, verbatim. In any text, **double asterisks** bold words and [words](page.html) makes a link to another page of the site.",
+    "about.subtitle: one line; each \" · \" separator shows in white.",
+    "about.links: contact buttons under the subtitle, in order. \"kind\": \"email\" is the email button: js/home.js puts the address together at page load, so it never appears whole in a page or JSON file. \"kind\": \"linkedin\" is the LinkedIn icon button (label is its accessible name).",
+    "about.bio: the paragraph beside the headshot on wide screens, under the header on phones. \"draft\": true until the owner sends the final wording; then replace the text and remove draft.",
+    "about.gallery_title, about.gallery_intro: the heading and one-line intro above the gallery.",
+    "about.gallery: the gallery images in display order, left to right and top to bottom. No captions. home.js lays them out in justified rows and keeps each pair in about.keep_together on the same row."
+  ],
+  "about": {
+    "name": "Peter Vlahakis",
+    "subtitle": "B.S. Mechanical Engineering · The University of Texas at Austin · May 2027 · Inverness, IL",
+    "links": [
+      { "kind": "email" },
+      { "kind": "linkedin", "label": "LinkedIn", "href": "https://www.linkedin.com/in/peter-vlahakis-40aa31334" }
+    ],
+    "headshot": "about/headshot",
+    "bio": {
+      "text": "I grew up outdoors, riding, camping, and backpacking with family and friends across Utah, Colorado, and Arizona. Keeping our machines running taught me how things work, starting with a non-running 2001 Honda CR 125 I rebuilt, and that curiosity led me to mechanical engineering. In the shop and on a team, I lead by example, stay organized, and see a problem through to the end. These days I help my dad and his friends build #1283, the Speed UTV El Diablo, over school breaks and on testing trips out west, and I hope to co-drive it in a SCORE race in the coming years.",
+      "draft": true
+    },
+    "gallery_title": "Life in Motion",
+    "gallery_intro": "Riding, hiking, game days, and good music: here's where the rest of my time goes.",
+    "gallery": [
+      "about/gallery/el-diablo-garage",
+      "about/gallery/el-diablo-dusk",
+      "about/gallery/husqvarna-sunset",
+      "about/gallery/race-day",
+      "about/gallery/cr125-before",
+      "about/gallery/cr125-after",
+      "about/gallery/group-ride",
+      "about/gallery/woods-riding",
+      "about/gallery/trail-overlook",
+      "about/gallery/husqvarna-ready",
+      "about/gallery/mountain-riding",
+      "about/gallery/welding-shop",
+      "about/gallery/canyon-walk",
+      "about/gallery/overlook-friends",
+      "about/gallery/trail-day-dog",
+      "about/gallery/riding-crew",
+      "about/gallery/game-night",
+      "about/gallery/red-river",
+      "about/gallery/truck-night",
+      "about/gallery/mountain-biking",
+      "about/gallery/campfire-friends",
+      "about/gallery/where-it-started",
+      "about/gallery/horseback",
+      "about/gallery/family"
+    ],
+    "keep_together": [["about/gallery/cr125-before", "about/gallery/cr125-after"]]
+  }
+}

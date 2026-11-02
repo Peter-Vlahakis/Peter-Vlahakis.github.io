@@ -1,0 +1,518 @@
+/* Base styles, navigation, and the shared two-pane shell. Colors come from tokens.css only. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: var(--nav-h);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-color: var(--accent);
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  background: var(--bg);
+  border: 1px solid var(--rule-strong);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+/* Small mono label: section labels, spec keys, meta text */
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.chip {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--rule-strong);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.button {
+  display: inline-block;
+  padding: var(--space-3) var(--space-5);
+  border: 1px solid var(--text);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* An image that opens the expanded view on click (Site.zoomable in js/media.js) */
+.zoom {
+  display: block;
+  width: 100%;
+  cursor: zoom-in;
+}
+
+.zoom img {
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.zoom:hover img {
+  opacity: 0.9;
+}
+
+.zoom:focus-visible {
+  outline-offset: 2px;
+}
+
+.caption {
+  margin-top: var(--space-3);
+  max-width: var(--measure);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+/* An empty slot that names what is pending. Never a stand-in image. */
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  padding: var(--space-5);
+  border: 1px dashed var(--rule-strong);
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.notice {
+  padding: var(--space-6) var(--gutter);
+  color: var(--text-muted);
+}
+
+/* Centered single-message page (404) */
+.message {
+  display: grid;
+  place-content: center;
+  gap: var(--space-4);
+  min-height: 100vh;
+  padding: var(--nav-h) var(--gutter);
+  text-align: center;
+}
+
+/* Photographer credit in the bottom-left corner of an image (its box must be positioned) */
+.credit-tag {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  max-width: 100%;
+  padding: 2px 6px;
+  overflow-wrap: anywhere;
+  background: var(--credit-tag-bg);
+  font-size: 0.625rem;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  pointer-events: none;
+}
+
+/* ---------- Expanded view (a modal dialog; any click closes it) ---------- */
+
+.lightbox {
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: var(--space-8) var(--gutter) var(--space-6);
+  border: 0;
+  background: none;
+  color: var(--text);
+  overflow: hidden;
+  cursor: zoom-out;
+}
+
+.lightbox[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox::backdrop {
+  background: var(--lightbox-backdrop);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--gutter);
+  padding: var(--space-2) var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+.lightbox__figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+  min-height: 0;
+  max-height: 100%;
+}
+
+.lightbox__frame {
+  position: relative;
+  min-height: 0;
+}
+
+.lightbox__img {
+  width: auto;
+  height: auto;
+  max-width: calc(100vw - 2 * var(--gutter));
+  max-height: calc(100svh - 10rem);
+}
+
+.lightbox__caption {
+  max-width: var(--measure);
+  font-size: var(--fs-sm);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* ---------- Navigation: text only, no panel ---------- */
+
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: var(--gutter);
+  pointer-events: none;
+}
+
+/* Soft fade from the page background so the links stay legible over video and scrolled content */
+.nav::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: calc(var(--nav-h) * 1.9);
+  background: var(--nav-fade);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Projects and Baja SAE: the nav has its own strip above the panes, so the fade must not
+   reach down over the content (on phones it also stops text ghosting behind the links). */
+.page-fixed .nav::before {
+  height: var(--nav-h);
+  background: var(--bg);
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: clamp(var(--space-5), 3.4vw, var(--space-7));
+  pointer-events: auto;
+}
+
+.nav__list li {
+  display: flex;
+}
+
+.nav__link {
+  display: block;
+  padding: var(--space-2) 2px;
+  border-bottom: 1px solid var(--clear);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0.8;
+  transition: opacity var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+
+.nav__link:hover,
+.nav__link:focus-visible,
+.nav__link[aria-current] {
+  opacity: 1;
+}
+
+.nav__link[aria-current] {
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+/* Phones, Home only (index.html): Baja SAE and Projects stay in the bar beside Menu */
+.nav__bar {
+  display: none;
+}
+
+.nav__toggle {
+  display: none;
+  margin-left: auto;
+  padding: var(--space-2) 2px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  pointer-events: auto;
+}
+
+@media (max-width: 767.98px) {
+  .nav {
+    justify-content: flex-end;
+  }
+
+  .nav__toggle {
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+
+  .nav__bar {
+    display: flex;
+    align-items: center;
+    gap: clamp(var(--space-5), 3.4vw, var(--space-7));
+    margin-left: auto;
+    pointer-events: auto;
+  }
+
+  .nav__bar li {
+    display: flex;
+  }
+
+  .nav__bar + .nav__toggle {
+    margin-left: clamp(var(--space-5), 3.4vw, var(--space-7));
+  }
+
+  /* The opened menu covers the bar */
+  .nav[data-open="true"] .nav__bar {
+    visibility: hidden;
+  }
+
+  .nav__list {
+    display: none;
+  }
+
+  .nav[data-open="true"] .nav__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-6);
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    padding: var(--nav-h) var(--gutter) var(--space-7);
+    background: var(--menu-sheet);
+  }
+
+  .nav[data-open="true"] .nav__link {
+    font-size: var(--fs-lg);
+  }
+}
+
+/* ---------- Two-pane shell (Projects, Baja SAE) ---------- */
+
+.shell {
+  padding-top: var(--nav-h);
+}
+
+/* The pane takes keyboard focus so it can be scrolled with the arrow and page keys */
+.shell__pane:focus-visible {
+  outline-offset: -2px;
+}
+
+.block {
+  padding: var(--space-7) var(--gutter);
+  border-top: 1px solid var(--rule);
+}
+
+.block__label {
+  margin-bottom: var(--space-5);
+}
+
+.block__text {
+  max-width: var(--measure);
+  color: var(--text-muted);
+}
+
+.block__text + .media-grid,
+.block__text + .placeholder,
+.block__text + figure {
+  margin-top: var(--space-5);
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.media-grid img,
+.figure-wide img {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .page-fixed {
+    overflow: hidden;
+  }
+
+  .shell {
+    position: fixed;
+    inset: var(--nav-h) 0 0 0;
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: var(--list-w) minmax(0, 1fr);
+  }
+
+  .shell__side {
+    min-height: 0;
+    border-right: 1px solid var(--rule);
+  }
+
+  .shell__pane {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .block {
+    padding-inline: var(--space-6);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

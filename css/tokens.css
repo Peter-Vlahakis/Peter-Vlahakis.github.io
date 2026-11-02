@@ -1,0 +1,194 @@
+/*
+ * Design tokens.
+ * This is the only file that may contain color literals (tools/check_site.py enforces it).
+ * To change the palette, edit --bg and --text (and --accent when a hue is chosen).
+ * To change fonts, edit the @font-face blocks and the two --font-* tokens.
+ */
+
+/* Inter (variable, 100-900). Latin + Greek subsets; the Greek file loads only where Greek text appears. */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../assets/fonts/inter-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../assets/fonts/inter-greek-wght-normal.woff2") format("woff2");
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+
+/* IBM Plex Mono, Latin only (it has no Greek; keep Greek text out of mono-styled elements). */
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2");
+}
+
+:root {
+  /* Palette */
+  --bg: #333333;
+  --text: #ffffff;
+  --accent: var(--text); /* no accent hue yet: active and hover states use opacity, weight, or a rule */
+
+  /* Derived from the palette */
+  --text-muted: color-mix(in srgb, var(--text) 76%, transparent);
+  --text-faint: color-mix(in srgb, var(--text) 60%, transparent);
+  --rule: color-mix(in srgb, var(--text) 16%, transparent);
+  --rule-strong: color-mix(in srgb, var(--text) 42%, transparent);
+  --surface: color-mix(in srgb, var(--text) 5%, transparent);
+  --clear: transparent;
+  --focus-ring: var(--accent);
+
+  /*
+   * Hero scrim: keeps the hero text readable over the brightest frames of the clip, while the
+   * video keeps its brightness. Three parts:
+   *   - a light, narrow band behind the name and tagline (--hero-scrim-strength);
+   *   - a dark halo hugging the letters (--hero-text-halo), which supplies the rest of the contrast
+   *     right where the letters meet the footage, so the band can stay light;
+   *   - a short, light fade along the bottom edge behind the location and Pause labels.
+   * Measured against the clip (every 0.25 s, brightest pixel behind each label): the tagline at
+   * 1024 px wide needs about 50% darkening for 4.5:1, the name (large text, 3:1) about 40%, and the
+   * location label on phones 15.5% (the foot gives 20%). Band + halo cover the first two at the
+   * letter edges. Re-measure if the clip changes.
+   */
+  --hero-scrim-color: #000000;
+  --hero-scrim-strength: 26%; /* behind the name and tagline */
+  --hero-scrim-feather: 56px; /* how softly the band fades out above and below the text */
+  --hero-scrim-foot: 20%; /* bottom edge, behind the location and Pause labels */
+  --hero-scrim: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--hero-scrim-color) var(--hero-scrim-foot), transparent) 72px,
+    transparent 168px
+  );
+  --hero-text-halo:
+    0 0 1px color-mix(in srgb, var(--hero-scrim-color) 70%, transparent),
+    0 0 4px color-mix(in srgb, var(--hero-scrim-color) 55%, transparent),
+    0 2px 20px color-mix(in srgb, var(--hero-scrim-color) 40%, transparent);
+  --hero-band: linear-gradient(
+    to bottom,
+    transparent,
+    color-mix(in srgb, var(--hero-scrim-color) var(--hero-scrim-strength), transparent) var(--hero-scrim-feather),
+    color-mix(in srgb, var(--hero-scrim-color) var(--hero-scrim-strength), transparent) calc(100% - var(--hero-scrim-feather)),
+    transparent
+  );
+
+  /*
+   * Navigation: a soft fade behind the text, not a panel. It stays strong through the line of
+   * link text (the first third) so the links hold 4.5:1 even over a white photo, then fades out.
+   */
+  --nav-fade: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--bg) 94%, transparent) 0%,
+    color-mix(in srgb, var(--bg) 84%, transparent) 36%,
+    color-mix(in srgb, var(--bg) 42%, transparent) 70%,
+    transparent 100%
+  );
+  --menu-sheet: var(--bg); /* the opened phone menu covers the page */
+
+  /* Longhorn Baja Racing (Baja SAE page): colors sampled from LBR_Logo_V2 */
+  --lbr-yellow: rgb(246 164 31);
+  --lbr-orange: rgb(225 83 34);
+  --lbr-red: rgb(182 47 31);
+  /* Header stripes, a little less saturated than the logo */
+  --lbr-stripe-1: color-mix(in oklab, var(--lbr-yellow) 84%, gray);
+  --lbr-stripe-2: color-mix(in oklab, var(--lbr-orange) 84%, gray);
+  --lbr-stripe-3: color-mix(in oklab, var(--lbr-red) 84%, gray);
+  /* Text in the team colors, kept at 4.5:1 or better on --bg */
+  --lbr-text-yellow: var(--lbr-yellow);
+  --lbr-text-orange: color-mix(in srgb, var(--lbr-orange) 66%, var(--text));
+  /* Off-road grit: sparse light speckle over the page, and a distressed edge for the stripes */
+  --grit-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 2.2 -1.45'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  --grit-opacity: 0.07;
+  --grit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -9 6.4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E");
+  /*
+   * Projects page: earthy accents sampled from the Swing Arm City footage (0:35-0:50, brightened):
+   * sunlit sand, sandstone, and the dusty sky. Touches only, on the project list and pane.
+   */
+  --earth-sand: rgb(165 109 52);
+  --earth-rock: rgb(121 72 30);
+  --earth-sky: rgb(144 153 162);
+  /* Text in those tones, 4.5:1 or better on --bg (about 6:1 each) */
+  --earth-text: color-mix(in srgb, var(--earth-sand) 55%, var(--text));
+  --earth-sky-text: color-mix(in srgb, var(--earth-sky) 70%, var(--text));
+  --earth-line: color-mix(in srgb, var(--earth-sand) 45%, transparent);
+  --earth-surface: color-mix(in srgb, var(--earth-rock) 16%, transparent);
+
+  /* Photo credit tag in an image's bottom-left corner, and the expanded view behind a photo */
+  --credit-tag-bg: color-mix(in srgb, black 58%, transparent);
+  --lightbox-backdrop: color-mix(in srgb, black 90%, transparent);
+
+  /* Projects list: hovered and selected project (a warm sandstone wash and a sand edge) */
+  --plist-hover-bg: color-mix(in srgb, var(--earth-rock) 22%, transparent);
+  --plist-current-bg: color-mix(in srgb, var(--earth-rock) 32%, transparent);
+  /* Projects image frames before their photo loads, and the arrow pinned to the screen's bottom edge */
+  --frame-bg: var(--surface);
+  --pnext-float-bg: color-mix(in srgb, var(--bg) 88%, transparent);
+  --pnext-float-shadow: 0 6px 18px color-mix(in srgb, black 45%, transparent);
+  /* Projects on phones: the open project dropdown, a shade darker than the page and lifted over it */
+  --pdrop-list-bg: color-mix(in srgb, var(--bg) 82%, black);
+  --pdrop-shadow: 0 12px 30px color-mix(in srgb, black 45%, transparent);
+
+  /* About: the LinkedIn icon takes LinkedIn's own blue on hover only */
+  --linkedin-blue: #0A66C2;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.75rem;
+  --fs-2xl: 2.25rem;
+  --fs-hero: clamp(2.75rem, 9.5vw, 7.5rem);
+  --tracking-label: 0.08em;
+
+  /* Spacing (4 px unit) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --gutter: clamp(16px, 4vw, 48px);
+
+  /* Layout */
+  --nav-h: 64px;
+  --list-w: clamp(240px, 26vw, 320px); /* 320px from about 1230px wide; narrower on tablets */
+  --spec-key-w: 110px;
+  --measure: 62ch;
+  --pane-h: calc(100vh - var(--nav-h));
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur-med: 400ms;
+  --dur-zoom: 600ms;
+  --dur-fade: 900ms;
+  --zoom: 1.03;
+}
+
+@supports (height: 100svh) {
+  :root {
+    --pane-h: calc(100svh - var(--nav-h));
+  }
+}

@@ -1,0 +1,1095 @@
+{
+  "projects/bed-delete-bracket/final": {
+    "src": "assets/img/projects/bed-delete-bracket/final-1280.webp",
+    "srcset": "assets/img/projects/bed-delete-bracket/final-640.webp 640w, assets/img/projects/bed-delete-bracket/final-1280.webp 1280w, assets/img/projects/bed-delete-bracket/final-1920.webp 1920w",
+    "width": 1280,
+    "height": 1370,
+    "alt": "Machined aluminum bed delete bracket with triangular pockets, bolted between a frame tube and the bed fairing on a Speed UTV El Diablo"
+  },
+  "projects/bed-delete-bracket/render": {
+    "src": "assets/img/projects/bed-delete-bracket/render-1280.webp",
+    "srcset": "assets/img/projects/bed-delete-bracket/render-640.webp 640w, assets/img/projects/bed-delete-bracket/render-1280.webp 1280w, assets/img/projects/bed-delete-bracket/render-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "CAD render of a long, thin aluminum bracket with four diamond-shaped lightening pockets on a dark grey background"
+  },
+  "projects/bed-delete-bracket/cam-op1": {
+    "src": "assets/img/projects/bed-delete-bracket/cam-op1-1280.webp",
+    "srcset": "assets/img/projects/bed-delete-bracket/cam-op1-640.webp 640w, assets/img/projects/bed-delete-bracket/cam-op1-1280.webp 1280w, assets/img/projects/bed-delete-bracket/cam-op1-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "Fusion 360 CAM simulation of Setup 1: pocket and contour toolpaths on the bracket, held in its stock"
+  },
+  "projects/bed-delete-bracket/cam-op2": {
+    "src": "assets/img/projects/bed-delete-bracket/cam-op2-1280.webp",
+    "srcset": "assets/img/projects/bed-delete-bracket/cam-op2-640.webp 640w, assets/img/projects/bed-delete-bracket/cam-op2-1280.webp 1280w, assets/img/projects/bed-delete-bracket/cam-op2-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "Fusion 360 CAM simulation of Setup 2: the flipped bracket with toolpaths finishing its pockets and walls"
+  },
+  "projects/bed-delete-bracket/process-vise": {
+    "src": "assets/img/projects/bed-delete-bracket/process-vise-1242.webp",
+    "srcset": "assets/img/projects/bed-delete-bracket/process-vise-640.webp 640w, assets/img/projects/bed-delete-bracket/process-vise-1242.webp 1242w",
+    "width": 1242,
+    "height": 2208,
+    "alt": "Aluminum bracket stock clamped in a milling vise after the first setup, with chips on the machine enclosure"
+  },
+  "projects/bed-delete-bracket/process-batch": {
+    "src": "assets/img/projects/bed-delete-bracket/process-batch-1280.webp",
+    "srcset": "assets/img/projects/bed-delete-bracket/process-batch-640.webp 640w, assets/img/projects/bed-delete-bracket/process-batch-1280.webp 1280w, assets/img/projects/bed-delete-bracket/process-batch-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Six aluminum bracket attempts laid out side by side on a workbench",
+    "large": {
+      "src": "assets/img/projects/bed-delete-bracket/process-batch-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "projects/bed-delete-bracket/installed-2": {
+    "src": "assets/img/projects/bed-delete-bracket/installed-2-1280.webp",
+    "srcset": "assets/img/projects/bed-delete-bracket/installed-2-640.webp 640w, assets/img/projects/bed-delete-bracket/installed-2-1280.webp 1280w, assets/img/projects/bed-delete-bracket/installed-2-1920.webp 1920w",
+    "width": 1280,
+    "height": 1486,
+    "alt": "The right bracket installed between a frame tube and the bed fairing"
+  },
+  "projects/gas-adapter/final": {
+    "src": "assets/img/projects/gas-adapter/final-1280.webp",
+    "srcset": "assets/img/projects/gas-adapter/final-640.webp 640w, assets/img/projects/gas-adapter/final-1280.webp 1280w, assets/img/projects/gas-adapter/final-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Finished aluminum adapter lying on a fixture table, internal threads visible inside the flanged end",
+    "large": {
+      "src": "assets/img/projects/gas-adapter/final-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "projects/gas-adapter/render": {
+    "src": "assets/img/projects/gas-adapter/render-1280.webp",
+    "srcset": "assets/img/projects/gas-adapter/render-640.webp 640w, assets/img/projects/gas-adapter/render-1280.webp 1280w, assets/img/projects/gas-adapter/render-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "CAD render of an aluminum adapter with a flanged, internally threaded end and a smooth cylindrical body on a dark grey background"
+  },
+  "projects/gas-adapter/cam-setup1": {
+    "src": "assets/img/projects/gas-adapter/cam-setup1-1280.webp",
+    "srcset": "assets/img/projects/gas-adapter/cam-setup1-640.webp 640w, assets/img/projects/gas-adapter/cam-setup1-1280.webp 1280w, assets/img/projects/gas-adapter/cam-setup1-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "Fusion 360 CAM simulation of Setup 1: the hex and female threads cut into the top of the stock block"
+  },
+  "projects/gas-adapter/cam-setup2": {
+    "src": "assets/img/projects/gas-adapter/cam-setup2-1280.webp",
+    "srcset": "assets/img/projects/gas-adapter/cam-setup2-640.webp 640w, assets/img/projects/gas-adapter/cam-setup2-1280.webp 1280w, assets/img/projects/gas-adapter/cam-setup2-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "Fusion 360 CAM simulation of Setup 2: a facing pass across the flipped stock, with the remaining material in green"
+  },
+  "projects/gas-adapter/cam-setup3": {
+    "src": "assets/img/projects/gas-adapter/cam-setup3-1280.webp",
+    "srcset": "assets/img/projects/gas-adapter/cam-setup3-640.webp 640w, assets/img/projects/gas-adapter/cam-setup3-1280.webp 1280w, assets/img/projects/gas-adapter/cam-setup3-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "Fusion 360 CAM simulation of Setup 3: adaptive passes roughing the barb out of the green stock"
+  },
+  "projects/gas-adapter/collet-crash": {
+    "src": "assets/img/projects/gas-adapter/collet-crash-1280.webp",
+    "srcset": "assets/img/projects/gas-adapter/collet-crash-640.webp 640w, assets/img/projects/gas-adapter/collet-crash-1280.webp 1280w, assets/img/projects/gas-adapter/collet-crash-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "The first attempt at the adapter after the collet crash, damaged near the hex, on a fixture table",
+    "large": {
+      "src": "assets/img/projects/gas-adapter/collet-crash-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "projects/gas-adapter/finished-upright": {
+    "src": "assets/img/projects/gas-adapter/finished-upright-1280.webp",
+    "srcset": "assets/img/projects/gas-adapter/finished-upright-640.webp 640w, assets/img/projects/gas-adapter/finished-upright-1280.webp 1280w, assets/img/projects/gas-adapter/finished-upright-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Finished adapter standing on its flange on a fixture table, smooth bore facing up",
+    "large": {
+      "src": "assets/img/projects/gas-adapter/finished-upright-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "projects/gas-adapter/installed-2": {
+    "src": "assets/img/projects/gas-adapter/installed-2-1280.webp",
+    "srcset": "assets/img/projects/gas-adapter/installed-2-640.webp 640w, assets/img/projects/gas-adapter/installed-2-1280.webp 1280w, assets/img/projects/gas-adapter/installed-2-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Close view of the adapter installed above the fuel cell",
+    "large": {
+      "src": "assets/img/projects/gas-adapter/installed-2-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "projects/nightstand-organizer/final": {
+    "src": "assets/img/projects/nightstand-organizer/final-1280.webp",
+    "srcset": "assets/img/projects/nightstand-organizer/final-640.webp 640w, assets/img/projects/nightstand-organizer/final-1280.webp 1280w, assets/img/projects/nightstand-organizer/final-1920.webp 1920w",
+    "width": 1280,
+    "height": 714,
+    "alt": "Front view of the finished aluminum organizer on a fixture table: sloped device slots, a domed pocket, and her name and flowers engraved across the angled front face",
+    "large": {
+      "src": "assets/img/projects/nightstand-organizer/final-2560.webp",
+      "width": 2560,
+      "height": 1427
+    }
+  },
+  "projects/nightstand-organizer/render": {
+    "src": "assets/img/projects/nightstand-organizer/render-1280.webp",
+    "srcset": "assets/img/projects/nightstand-organizer/render-640.webp 640w, assets/img/projects/nightstand-organizer/render-1280.webp 1280w, assets/img/projects/nightstand-organizer/render-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "CAD render of the aluminum organizer showing three device slots, two pockets, and engraved lettering on the front and sloped faces"
+  },
+  "projects/nightstand-organizer/cam-setup1": {
+    "src": "assets/img/projects/nightstand-organizer/cam-setup1-1280.webp",
+    "srcset": "assets/img/projects/nightstand-organizer/cam-setup1-640.webp 640w, assets/img/projects/nightstand-organizer/cam-setup1-1280.webp 1280w, assets/img/projects/nightstand-organizer/cam-setup1-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "Fusion 360 CAM simulation of Setup 1: toolpaths over the organizer's slots, pockets, and engraved text"
+  },
+  "projects/nightstand-organizer/cam-setup2": {
+    "src": "assets/img/projects/nightstand-organizer/cam-setup2-1280.webp",
+    "srcset": "assets/img/projects/nightstand-organizer/cam-setup2-640.webp 640w, assets/img/projects/nightstand-organizer/cam-setup2-1280.webp 1280w, assets/img/projects/nightstand-organizer/cam-setup2-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "Fusion 360 CAM simulation of Setup 2: a facing pass across the flipped organizer's bottom, with the remaining stock in green"
+  },
+  "projects/nightstand-organizer/cam-setup3": {
+    "src": "assets/img/projects/nightstand-organizer/cam-setup3-1280.webp",
+    "srcset": "assets/img/projects/nightstand-organizer/cam-setup3-640.webp 640w, assets/img/projects/nightstand-organizer/cam-setup3-1280.webp 1280w, assets/img/projects/nightstand-organizer/cam-setup3-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "Fusion 360 CAM simulation of Setup 3: engraving the name and florals on the organizer's sloped front face"
+  },
+  "projects/nightstand-organizer/detail-top": {
+    "src": "assets/img/projects/nightstand-organizer/detail-top-753.webp",
+    "srcset": "assets/img/projects/nightstand-organizer/detail-top-753.webp 753w",
+    "width": 753,
+    "height": 550,
+    "alt": "Top view of the finished organizer showing the engraved rules inside the main pocket"
+  },
+  "projects/nightstand-organizer/in-use": {
+    "src": "assets/img/projects/nightstand-organizer/in-use-1280.webp",
+    "srcset": "assets/img/projects/nightstand-organizer/in-use-640.webp 640w, assets/img/projects/nightstand-organizer/in-use-1280.webp 1280w, assets/img/projects/nightstand-organizer/in-use-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "The organizer on a desk holding a tablet in a case upright in one of its slots",
+    "large": {
+      "src": "assets/img/projects/nightstand-organizer/in-use-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "projects/longhorn-coaster/final": {
+    "src": "assets/img/projects/longhorn-coaster/final-1280.webp",
+    "srcset": "assets/img/projects/longhorn-coaster/final-640.webp 640w, assets/img/projects/longhorn-coaster/final-1280.webp 1280w, assets/img/projects/longhorn-coaster/final-1920.webp 1920w",
+    "width": 1280,
+    "height": 1004,
+    "alt": "All five aluminum coasters on a wooden table: three brushed, a Flat toolpath finish at bottom left, and a Pocket toolpath finish at top left",
+    "large": {
+      "src": "assets/img/projects/longhorn-coaster/final-2560.webp",
+      "width": 2560,
+      "height": 2008
+    }
+  },
+  "projects/longhorn-coaster/render": {
+    "src": "assets/img/projects/longhorn-coaster/render-1280.webp",
+    "srcset": "assets/img/projects/longhorn-coaster/render-640.webp 640w, assets/img/projects/longhorn-coaster/render-1280.webp 1280w, assets/img/projects/longhorn-coaster/render-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "CAD render of a square aluminum coaster with a raised Longhorn and short corner legs on a dark grey background"
+  },
+  "projects/longhorn-coaster/cam-1": {
+    "src": "assets/img/projects/longhorn-coaster/cam-1-1280.webp",
+    "srcset": "assets/img/projects/longhorn-coaster/cam-1-640.webp 640w, assets/img/projects/longhorn-coaster/cam-1-1280.webp 1280w, assets/img/projects/longhorn-coaster/cam-1-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "Fusion 360 CAM simulation of Setup 1: toolpaths clearing between the coaster's legs and around its outer profile"
+  },
+  "projects/longhorn-coaster/cam-2": {
+    "src": "assets/img/projects/longhorn-coaster/cam-2-1280.webp",
+    "srcset": "assets/img/projects/longhorn-coaster/cam-2-640.webp 640w, assets/img/projects/longhorn-coaster/cam-2-1280.webp 1280w, assets/img/projects/longhorn-coaster/cam-2-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "Fusion 360 CAM simulation of Setup 2: toolpaths over the coaster's top face and around the raised Longhorn"
+  },
+  "projects/ox-plaque/final": {
+    "src": "assets/img/projects/ox-plaque/final-1280.webp",
+    "srcset": "assets/img/projects/ox-plaque/final-640.webp 640w, assets/img/projects/ox-plaque/final-1280.webp 1280w, assets/img/projects/ox-plaque/final-1920.webp 1920w",
+    "width": 1280,
+    "height": 854,
+    "alt": "Close view of the finished Theta Chi plaque: bare raised Greek letters, a Longhorn, and PC F23' against a red painted field",
+    "large": {
+      "src": "assets/img/projects/ox-plaque/final-2560.webp",
+      "width": 2560,
+      "height": 1709
+    }
+  },
+  "projects/ox-plaque/render": {
+    "src": "assets/img/projects/ox-plaque/render-1280.webp",
+    "srcset": "assets/img/projects/ox-plaque/render-640.webp 640w, assets/img/projects/ox-plaque/render-1280.webp 1280w, assets/img/projects/ox-plaque/render-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "CAD render of the Theta Chi plaque with silver raised lettering and Longhorn over a red recessed field on a dark grey background"
+  },
+  "projects/ox-plaque/cam-1": {
+    "src": "assets/img/projects/ox-plaque/cam-1-1280.webp",
+    "srcset": "assets/img/projects/ox-plaque/cam-1-640.webp 640w, assets/img/projects/ox-plaque/cam-1-1280.webp 1280w, assets/img/projects/ox-plaque/cam-1-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "Fusion 360 CAM simulation of Setup 1: adaptive and pocket toolpaths around the plaque's raised Theta Chi letters and Longhorn"
+  },
+  "projects/ox-plaque/cam-2": {
+    "src": "assets/img/projects/ox-plaque/cam-2-1280.webp",
+    "srcset": "assets/img/projects/ox-plaque/cam-2-640.webp 640w, assets/img/projects/ox-plaque/cam-2-1280.webp 1280w, assets/img/projects/ox-plaque/cam-2-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "Fusion 360 CAM simulation of Setup 2: a facing pass removing the green clamping hat from the flipped plaque"
+  },
+  "projects/ox-plaque/cam-3": {
+    "src": "assets/img/projects/ox-plaque/cam-3-1280.webp",
+    "srcset": "assets/img/projects/ox-plaque/cam-3-640.webp 640w, assets/img/projects/ox-plaque/cam-3-1280.webp 1280w, assets/img/projects/ox-plaque/cam-3-1920.webp 1920w",
+    "width": 1280,
+    "height": 720,
+    "alt": "Fusion 360 CAM simulation of Setup 3: a facing pass over the red painted plaque, baring the raised letters and Longhorn"
+  },
+  "projects/ox-plaque/process-coat": {
+    "src": "assets/img/projects/ox-plaque/process-coat-1280.webp",
+    "srcset": "assets/img/projects/ox-plaque/process-coat-640.webp 640w, assets/img/projects/ox-plaque/process-coat-1280.webp 1280w, assets/img/projects/ox-plaque/process-coat-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "The plaque on a metal rack with its edges taped off and the front face painted red",
+    "large": {
+      "src": "assets/img/projects/ox-plaque/process-coat-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "projects/sheet-metal-wall-art/final": {
+    "src": "assets/img/projects/sheet-metal-wall-art/final-1280.webp",
+    "srcset": "assets/img/projects/sheet-metal-wall-art/final-640.webp 640w, assets/img/projects/sheet-metal-wall-art/final-1280.webp 1280w, assets/img/projects/sheet-metal-wall-art/final-1920.webp 1920w",
+    "width": 1280,
+    "height": 1039,
+    "alt": "Texas-shaped sheet metal wall art with red Theta Chi letters and a raised orange Longhorn, backlit, on a workbench"
+  },
+  "projects/sheet-metal-wall-art/installed": {
+    "src": "assets/img/projects/sheet-metal-wall-art/installed-1280.webp",
+    "srcset": "assets/img/projects/sheet-metal-wall-art/installed-640.webp 640w, assets/img/projects/sheet-metal-wall-art/installed-1280.webp 1280w, assets/img/projects/sheet-metal-wall-art/installed-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "The V2 wall art installed at the Theta Chi house at night, the Longhorn backlit by LEDs",
+    "large": {
+      "src": "assets/img/projects/sheet-metal-wall-art/installed-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "projects/sheet-metal-wall-art/v1-cam": {
+    "src": "assets/img/projects/sheet-metal-wall-art/v1-cam-1280.webp",
+    "srcset": "assets/img/projects/sheet-metal-wall-art/v1-cam-640.webp 640w, assets/img/projects/sheet-metal-wall-art/v1-cam-1280.webp 1280w, assets/img/projects/sheet-metal-wall-art/v1-cam-1920.webp 1920w",
+    "width": 1280,
+    "height": 1051,
+    "alt": "Photo of a screen showing the cut profile for the Texas piece in SheetCam"
+  },
+  "projects/sheet-metal-wall-art/v1-cut": {
+    "src": "assets/img/projects/sheet-metal-wall-art/v1-cut-1280.webp",
+    "srcset": "assets/img/projects/sheet-metal-wall-art/v1-cut-640.webp 640w, assets/img/projects/sheet-metal-wall-art/v1-cut-1280.webp 1280w, assets/img/projects/sheet-metal-wall-art/v1-cut-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "V1 stainless Texas shape after plasma cutting, with the lettering and Longhorn cut through",
+    "large": {
+      "src": "assets/img/projects/sheet-metal-wall-art/v1-cut-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "projects/sheet-metal-wall-art/v1-finished": {
+    "src": "assets/img/projects/sheet-metal-wall-art/v1-finished-1242.webp",
+    "srcset": "assets/img/projects/sheet-metal-wall-art/v1-finished-640.webp 640w, assets/img/projects/sheet-metal-wall-art/v1-finished-1242.webp 1242w",
+    "width": 1242,
+    "height": 1450,
+    "alt": "Finished V1: polished stainless Texas shape with the painted backing showing through the lettering and Longhorn cutouts"
+  },
+  "projects/sheet-metal-wall-art/v2-cut": {
+    "src": "assets/img/projects/sheet-metal-wall-art/v2-cut-1280.webp",
+    "srcset": "assets/img/projects/sheet-metal-wall-art/v2-cut-640.webp 640w, assets/img/projects/sheet-metal-wall-art/v2-cut-1280.webp 1280w, assets/img/projects/sheet-metal-wall-art/v2-cut-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "V2 Texas shape cut from aluminum diamond plate, with Theta Chi and Longhorn cutouts, on a workbench",
+    "large": {
+      "src": "assets/img/projects/sheet-metal-wall-art/v2-cut-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "projects/sheet-metal-wall-art/v2-standoffs": {
+    "src": "assets/img/projects/sheet-metal-wall-art/v2-standoffs-1280.webp",
+    "srcset": "assets/img/projects/sheet-metal-wall-art/v2-standoffs-640.webp 640w, assets/img/projects/sheet-metal-wall-art/v2-standoffs-1280.webp 1280w, assets/img/projects/sheet-metal-wall-art/v2-standoffs-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Back of the V2 Longhorn cutout with studs bonded on",
+    "large": {
+      "src": "assets/img/projects/sheet-metal-wall-art/v2-standoffs-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/lbr-logo": {
+    "src": "assets/img/baja/lbr-logo-1280.webp",
+    "srcset": "assets/img/baja/lbr-logo-640.webp 640w, assets/img/baja/lbr-logo-1280.webp 1280w, assets/img/baja/lbr-logo-1600.webp 1600w",
+    "width": 1280,
+    "height": 717,
+    "alt": "Longhorn Baja Racing logo"
+  },
+  "baja/tube-selection/stiffness": {
+    "src": "assets/img/baja/tube-selection/stiffness-700.webp",
+    "srcset": "assets/img/baja/tube-selection/stiffness-700.webp 700w",
+    "width": 700,
+    "height": 525,
+    "alt": "MATLAB scatter plot of bending stiffness against cross-sectional area for 1018, 4130, and Docol R8 tubes, with a dashed minimum line at 2620 newton metres squared"
+  },
+  "baja/tube-selection/strength": {
+    "src": "assets/img/baja/tube-selection/strength-700.webp",
+    "srcset": "assets/img/baja/tube-selection/strength-700.webp 700w",
+    "width": 700,
+    "height": 525,
+    "alt": "MATLAB scatter plot of bending strength against cross-sectional area for 1018, 4130, and Docol R8 tubes, with a dashed minimum line at 374 newton metres and one data point's tooltip open"
+  },
+  "baja/chassis-fab/tube-fit": {
+    "src": "assets/img/baja/chassis-fab/tube-fit-1280.webp",
+    "srcset": "assets/img/baja/chassis-fab/tube-fit-640.webp 640w, assets/img/baja/chassis-fab/tube-fit-1280.webp 1280w, assets/img/baja/chassis-fab/tube-fit-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Chassis tubes held in Stronghand fixtures on the fixture table during jigging",
+    "large": {
+      "src": "assets/img/baja/chassis-fab/tube-fit-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/chassis-fab/frame-in-shop": {
+    "src": "assets/img/baja/chassis-fab/frame-in-shop-1280.webp",
+    "srcset": "assets/img/baja/chassis-fab/frame-in-shop-640.webp 640w, assets/img/baja/chassis-fab/frame-in-shop-1280.webp 1280w, assets/img/baja/chassis-fab/frame-in-shop-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Finished chassis in the shop with suspension components fitted, prepped for paint",
+    "large": {
+      "src": "assets/img/baja/chassis-fab/frame-in-shop-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/chassis-fab/cut-tabs": {
+    "src": "assets/img/baja/chassis-fab/cut-tabs-1280.webp",
+    "srcset": "assets/img/baja/chassis-fab/cut-tabs-640.webp 640w, assets/img/baja/chassis-fab/cut-tabs-1280.webp 1280w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "A batch of steel tabs after plasma cutting and press-brake bending, laid out on a workbench",
+    "large": {
+      "src": "assets/img/baja/chassis-fab/cut-tabs-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/chassis-fab/finished-1": {
+    "src": "assets/img/baja/chassis-fab/finished-1-1280.webp",
+    "srcset": "assets/img/baja/chassis-fab/finished-1-640.webp 640w, assets/img/baja/chassis-fab/finished-1-1280.webp 1280w",
+    "width": 1280,
+    "height": 1737,
+    "alt": "Primed and painted chassis on stands outdoors, three-quarter view",
+    "large": {
+      "src": "assets/img/baja/chassis-fab/finished-1-2560.webp",
+      "width": 2560,
+      "height": 3473
+    }
+  },
+  "baja/chassis-fab/finished-2": {
+    "src": "assets/img/baja/chassis-fab/finished-2-1280.webp",
+    "srcset": "assets/img/baja/chassis-fab/finished-2-640.webp 640w, assets/img/baja/chassis-fab/finished-2-1280.webp 1280w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Primed and painted chassis on stands outdoors, side view",
+    "large": {
+      "src": "assets/img/baja/chassis-fab/finished-2-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/fea/front-rollover": {
+    "src": "assets/img/baja/fea/front-rollover-1280.webp",
+    "srcset": "assets/img/baja/fea/front-rollover-640.webp 640w, assets/img/baja/fea/front-rollover-1280.webp 1280w",
+    "width": 1280,
+    "height": 837,
+    "alt": "ANSYS screen recording of a static structural result for the front rollover case: the chassis frame's total deformation, exaggerated for visibility and shaded from blue at zero to red at the 0.013455 ft maximum",
+    "animated": true,
+    "poster": {
+      "src": "assets/img/baja/fea/front-rollover-poster-1280.webp",
+      "srcset": "assets/img/baja/fea/front-rollover-poster-640.webp 640w, assets/img/baja/fea/front-rollover-poster-1280.webp 1280w"
+    }
+  },
+  "baja/fea/front-collision-tow-hook": {
+    "src": "assets/img/baja/fea/front-collision-tow-hook-1280.webp",
+    "srcset": "assets/img/baja/fea/front-collision-tow-hook-640.webp 640w, assets/img/baja/fea/front-collision-tow-hook-1280.webp 1280w",
+    "width": 1280,
+    "height": 611,
+    "alt": "ANSYS screen recording of a static structural result for the front collision case, tow hook only: the chassis frame's total deformation, exaggerated for visibility and shaded from blue at zero to red at the 0.051177 ft maximum",
+    "animated": true,
+    "poster": {
+      "src": "assets/img/baja/fea/front-collision-tow-hook-poster-1280.webp",
+      "srcset": "assets/img/baja/fea/front-collision-tow-hook-poster-640.webp 640w, assets/img/baja/fea/front-collision-tow-hook-poster-1280.webp 1280w"
+    }
+  },
+  "baja/fea/side-impact": {
+    "src": "assets/img/baja/fea/side-impact-1280.webp",
+    "srcset": "assets/img/baja/fea/side-impact-640.webp 640w, assets/img/baja/fea/side-impact-1280.webp 1280w",
+    "width": 1280,
+    "height": 849,
+    "alt": "ANSYS screen recording of a static structural result for the side and frontal impact case: the chassis frame's total deformation, exaggerated for visibility and shaded from blue at zero to red at the 0.076048 ft maximum",
+    "animated": true,
+    "poster": {
+      "src": "assets/img/baja/fea/side-impact-poster-1280.webp",
+      "srcset": "assets/img/baja/fea/side-impact-poster-640.webp 640w, assets/img/baja/fea/side-impact-poster-1280.webp 1280w"
+    }
+  },
+  "baja/overview/hill-climb": {
+    "src": "assets/img/baja/overview/hill-climb-1280.webp",
+    "srcset": "assets/img/baja/overview/hill-climb-640.webp 640w, assets/img/baja/overview/hill-climb-1280.webp 1280w",
+    "width": 1280,
+    "height": 1920,
+    "alt": "The car climbing a steep dirt bank at Baja SAE Ohio, spectators and a US flag behind",
+    "large": {
+      "src": "assets/img/baja/overview/hill-climb-2560.webp",
+      "width": 2560,
+      "height": 3840
+    }
+  },
+  "baja/overview/pits": {
+    "src": "assets/img/baja/overview/pits-1280.webp",
+    "srcset": "assets/img/baja/overview/pits-640.webp 640w, assets/img/baja/overview/pits-1280.webp 1280w, assets/img/baja/overview/pits-1920.webp 1920w",
+    "width": 1280,
+    "height": 853,
+    "alt": "Driver sitting on the car in the pit area at competition",
+    "credit": "@glawrence_photography",
+    "large": {
+      "src": "assets/img/baja/overview/pits-2560.webp",
+      "width": 2560,
+      "height": 1707
+    }
+  },
+  "baja/overview/welding": {
+    "src": "assets/img/baja/overview/welding-698.webp",
+    "srcset": "assets/img/baja/overview/welding-698.webp 698w",
+    "width": 698,
+    "height": 1024,
+    "alt": "Peter Vlahakis TIG welding a chassis joint at the fixture table"
+  },
+  "baja/overview/car": {
+    "src": "assets/img/baja/overview/car-1280.webp",
+    "srcset": "assets/img/baja/overview/car-640.webp 640w, assets/img/baja/overview/car-1280.webp 1280w, assets/img/baja/overview/car-1920.webp 1920w",
+    "width": 1280,
+    "height": 853,
+    "alt": "The finished car, number 185, on grass in evening light",
+    "credit": "@glawrence_photography",
+    "large": {
+      "src": "assets/img/baja/overview/car-2560.webp",
+      "width": 2560,
+      "height": 1707
+    }
+  },
+  "baja/cad/chassis-final": {
+    "src": "assets/img/baja/cad/chassis-final-640.webp",
+    "srcset": "assets/img/baja/cad/chassis-final-640.webp 640w, assets/img/baja/cad/chassis-final-1405.webp 1405w",
+    "width": 640,
+    "height": 380,
+    "alt": "SolidWorks model of the final chassis frame, three-quarter side view"
+  },
+  "baja/cad/driver-model": {
+    "src": "assets/img/baja/cad/driver-model-379.webp",
+    "srcset": "assets/img/baja/cad/driver-model-379.webp 379w",
+    "width": 379,
+    "height": 217,
+    "alt": "Side view of the chassis model with a seated driver model and the helmet clearance envelope"
+  },
+  "baja/cad/driver-model-2": {
+    "src": "assets/img/baja/cad/driver-model-2-310.webp",
+    "srcset": "assets/img/baja/cad/driver-model-2-310.webp 310w",
+    "width": 310,
+    "height": 255,
+    "alt": "Three-quarter view of the chassis model with the seated driver model"
+  },
+  "baja/chassis-fab/roll-hoop-notch": {
+    "src": "assets/img/baja/chassis-fab/roll-hoop-notch-1280.webp",
+    "srcset": "assets/img/baja/chassis-fab/roll-hoop-notch-640.webp 640w, assets/img/baja/chassis-fab/roll-hoop-notch-1280.webp 1280w, assets/img/baja/chassis-fab/roll-hoop-notch-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "A notched roll hoop tube held at its joint on the fixture table during fitment",
+    "large": {
+      "src": "assets/img/baja/chassis-fab/roll-hoop-notch-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/chassis-fab/roll-cage": {
+    "src": "assets/img/baja/chassis-fab/roll-cage-1280.webp",
+    "srcset": "assets/img/baja/chassis-fab/roll-cage-640.webp 640w, assets/img/baja/chassis-fab/roll-cage-1280.webp 1280w, assets/img/baja/chassis-fab/roll-cage-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "The finished primary roll cage standing on the fixture table in the shop",
+    "large": {
+      "src": "assets/img/baja/chassis-fab/roll-cage-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/chassis-fab/welders": {
+    "src": "assets/img/baja/chassis-fab/welders-1179.webp",
+    "srcset": "assets/img/baja/chassis-fab/welders-640.webp 640w, assets/img/baja/chassis-fab/welders-1179.webp 1179w",
+    "width": 1179,
+    "height": 1742,
+    "alt": "Peter with the two other main chassis welders beside the chassis in the shop"
+  },
+  "baja/chassis-fab/welding-peter": {
+    "src": "assets/img/baja/chassis-fab/welding-peter-1280.webp",
+    "srcset": "assets/img/baja/chassis-fab/welding-peter-640.webp 640w, assets/img/baja/chassis-fab/welding-peter-1280.webp 1280w, assets/img/baja/chassis-fab/welding-peter-1920.webp 1920w",
+    "width": 1280,
+    "height": 2276,
+    "alt": "Peter in a welding helmet at the chassis in the shop",
+    "large": {
+      "src": "assets/img/baja/chassis-fab/welding-peter-2560.webp",
+      "width": 2560,
+      "height": 4551
+    }
+  },
+  "baja/scale-model/fixturing": {
+    "src": "assets/img/baja/scale-model/fixturing-1280.webp",
+    "srcset": "assets/img/baja/scale-model/fixturing-640.webp 640w, assets/img/baja/scale-model/fixturing-1280.webp 1280w, assets/img/baja/scale-model/fixturing-1920.webp 1920w",
+    "width": 1280,
+    "height": 1239,
+    "alt": "Half-scale chassis floor tubes held in clamps and stops on a fixture table, before welding",
+    "large": {
+      "src": "assets/img/baja/scale-model/fixturing-2560.webp",
+      "width": 2560,
+      "height": 2477
+    }
+  },
+  "baja/scale-model/floor": {
+    "src": "assets/img/baja/scale-model/floor-1280.webp",
+    "srcset": "assets/img/baja/scale-model/floor-640.webp 640w, assets/img/baja/scale-model/floor-1280.webp 1280w, assets/img/baja/scale-model/floor-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Half-scale chassis floor tubes clamped on a fixture table",
+    "large": {
+      "src": "assets/img/baja/scale-model/floor-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/scale-model/roll-hoop": {
+    "src": "assets/img/baja/scale-model/roll-hoop-1280.webp",
+    "srcset": "assets/img/baja/scale-model/roll-hoop-640.webp 640w, assets/img/baja/scale-model/roll-hoop-1280.webp 1280w, assets/img/baja/scale-model/roll-hoop-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Half-scale roll hoop and floor members clamped on a fixture table",
+    "large": {
+      "src": "assets/img/baja/scale-model/roll-hoop-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/arms/upper-control-arms": {
+    "src": "assets/img/baja/arms/upper-control-arms-1280.webp",
+    "srcset": "assets/img/baja/arms/upper-control-arms-640.webp 640w, assets/img/baja/arms/upper-control-arms-1280.webp 1280w, assets/img/baja/arms/upper-control-arms-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "A pair of welded upper control arms laid out on the shop floor",
+    "large": {
+      "src": "assets/img/baja/arms/upper-control-arms-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/arms/lower-control-arm": {
+    "src": "assets/img/baja/arms/lower-control-arm-1280.webp",
+    "srcset": "assets/img/baja/arms/lower-control-arm-640.webp 640w, assets/img/baja/arms/lower-control-arm-1280.webp 1280w, assets/img/baja/arms/lower-control-arm-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "A welded lower control arm on the fixture table",
+    "large": {
+      "src": "assets/img/baja/arms/lower-control-arm-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/arms/arms-installed": {
+    "src": "assets/img/baja/arms/arms-installed-1280.webp",
+    "srcset": "assets/img/baja/arms/arms-installed-640.webp 640w, assets/img/baja/arms/arms-installed-1280.webp 1280w, assets/img/baja/arms/arms-installed-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Control arms and shock installed on the chassis tabs",
+    "large": {
+      "src": "assets/img/baja/arms/arms-installed-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/arms/trailing-truss-1": {
+    "src": "assets/img/baja/arms/trailing-truss-1-1280.webp",
+    "srcset": "assets/img/baja/arms/trailing-truss-1-640.webp 640w, assets/img/baja/arms/trailing-truss-1-1280.webp 1280w, assets/img/baja/arms/trailing-truss-1-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Trailing arm truss tubes fixtured on the welding table",
+    "large": {
+      "src": "assets/img/baja/arms/trailing-truss-1-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/arms/trailing-truss-2": {
+    "src": "assets/img/baja/arms/trailing-truss-2-1280.webp",
+    "srcset": "assets/img/baja/arms/trailing-truss-2-640.webp 640w, assets/img/baja/arms/trailing-truss-2-1280.webp 1280w, assets/img/baja/arms/trailing-truss-2-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Trailing arm truss tubes clamped on the fixture table",
+    "large": {
+      "src": "assets/img/baja/arms/trailing-truss-2-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/arms/trailing-connection": {
+    "src": "assets/img/baja/arms/trailing-connection-1280.webp",
+    "srcset": "assets/img/baja/arms/trailing-connection-640.webp 640w, assets/img/baja/arms/trailing-connection-1280.webp 1280w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Trailing arm chassis connection: rectangular tube with a welded nut and heim joint",
+    "large": {
+      "src": "assets/img/baja/arms/trailing-connection-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/arms/trailing-final-1": {
+    "src": "assets/img/baja/arms/trailing-final-1-1280.webp",
+    "srcset": "assets/img/baja/arms/trailing-final-1-640.webp 640w, assets/img/baja/arms/trailing-final-1-1280.webp 1280w, assets/img/baja/arms/trailing-final-1-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Two finished trailing arms with LBR cutouts on the fixture table",
+    "large": {
+      "src": "assets/img/baja/arms/trailing-final-1-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/arms/trailing-final-2": {
+    "src": "assets/img/baja/arms/trailing-final-2-1280.webp",
+    "srcset": "assets/img/baja/arms/trailing-final-2-640.webp 640w, assets/img/baja/arms/trailing-final-2-1280.webp 1280w, assets/img/baja/arms/trailing-final-2-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Two trailing arms painted black, with LBR cutouts",
+    "large": {
+      "src": "assets/img/baja/arms/trailing-final-2-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/tabs/skid-plate": {
+    "src": "assets/img/baja/tabs/skid-plate-1280.webp",
+    "srcset": "assets/img/baja/tabs/skid-plate-640.webp 640w, assets/img/baja/tabs/skid-plate-1280.webp 1280w, assets/img/baja/tabs/skid-plate-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Aluminum sheet with its protective film laid over the chassis during skid plate fabrication",
+    "large": {
+      "src": "assets/img/baja/tabs/skid-plate-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/tabs/upper-shock": {
+    "src": "assets/img/baja/tabs/upper-shock-1280.webp",
+    "srcset": "assets/img/baja/tabs/upper-shock-640.webp 640w, assets/img/baja/tabs/upper-shock-1280.webp 1280w, assets/img/baja/tabs/upper-shock-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Upper shock mount tabs welded to the chassis with the shock bolted in",
+    "large": {
+      "src": "assets/img/baja/tabs/upper-shock-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/tabs/lower-shock": {
+    "src": "assets/img/baja/tabs/lower-shock-1280.webp",
+    "srcset": "assets/img/baja/tabs/lower-shock-640.webp 640w, assets/img/baja/tabs/lower-shock-1280.webp 1280w, assets/img/baja/tabs/lower-shock-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Lower shock mount tabs welded to the lower control arm plate",
+    "large": {
+      "src": "assets/img/baja/tabs/lower-shock-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/tabs/panel-fitment": {
+    "src": "assets/img/baja/tabs/panel-fitment-1280.webp",
+    "srcset": "assets/img/baja/tabs/panel-fitment-640.webp 640w, assets/img/baja/tabs/panel-fitment-1280.webp 1280w, assets/img/baja/tabs/panel-fitment-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Aluminum body panels clamped to the chassis during initial fitment",
+    "large": {
+      "src": "assets/img/baja/tabs/panel-fitment-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/tabs/side-panel": {
+    "src": "assets/img/baja/tabs/side-panel-1280.webp",
+    "srcset": "assets/img/baja/tabs/side-panel-640.webp 640w, assets/img/baja/tabs/side-panel-1280.webp 1280w, assets/img/baja/tabs/side-panel-1920.webp 1920w",
+    "width": 1280,
+    "height": 853,
+    "alt": "Orange side body panel with sponsor graphics on the finished car",
+    "credit": "@glawrence_photography",
+    "large": {
+      "src": "assets/img/baja/tabs/side-panel-2560.webp",
+      "width": 2560,
+      "height": 1707
+    }
+  },
+  "baja/tabs/number-plate": {
+    "src": "assets/img/baja/tabs/number-plate-1280.webp",
+    "srcset": "assets/img/baja/tabs/number-plate-640.webp 640w, assets/img/baja/tabs/number-plate-1280.webp 1280w, assets/img/baja/tabs/number-plate-1920.webp 1920w",
+    "width": 1280,
+    "height": 1978,
+    "alt": "Rear number plate reading 185 on the finished car",
+    "credit": "@glawrence_photography",
+    "large": {
+      "src": "assets/img/baja/tabs/number-plate-2560.webp",
+      "width": 2560,
+      "height": 3956
+    }
+  },
+  "baja/tabs/firewall": {
+    "src": "assets/img/baja/tabs/firewall-1280.webp",
+    "srcset": "assets/img/baja/tabs/firewall-640.webp 640w, assets/img/baja/tabs/firewall-1280.webp 1280w, assets/img/baja/tabs/firewall-1920.webp 1920w",
+    "width": 1280,
+    "height": 1617,
+    "alt": "Close view of the aluminum firewall behind the seat, with number 185",
+    "credit": "@glawrence_photography",
+    "large": {
+      "src": "assets/img/baja/tabs/firewall-2560.webp",
+      "width": 2560,
+      "height": 3235
+    }
+  },
+  "baja/steering/rack-front": {
+    "src": "assets/img/baja/steering/rack-front-1280.webp",
+    "srcset": "assets/img/baja/steering/rack-front-640.webp 640w, assets/img/baja/steering/rack-front-1280.webp 1280w, assets/img/baja/steering/rack-front-1920.webp 1920w",
+    "width": 1280,
+    "height": 959,
+    "alt": "Steering rack mounted in the chassis, viewed from the front of the car",
+    "large": {
+      "src": "assets/img/baja/steering/rack-front-2560.webp",
+      "width": 2560,
+      "height": 1919
+    }
+  },
+  "baja/steering/rack-top": {
+    "src": "assets/img/baja/steering/rack-top-1280.webp",
+    "srcset": "assets/img/baja/steering/rack-top-640.webp 640w, assets/img/baja/steering/rack-top-1280.webp 1280w, assets/img/baja/steering/rack-top-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Top view of the steering rack and its mounting tabs in the chassis",
+    "large": {
+      "src": "assets/img/baja/steering/rack-top-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/steering/column-support": {
+    "src": "assets/img/baja/steering/column-support-1280.webp",
+    "srcset": "assets/img/baja/steering/column-support-640.webp 640w, assets/img/baja/steering/column-support-1280.webp 1280w, assets/img/baja/steering/column-support-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Fitting the steering column support tube, checked with a digital angle gauge",
+    "large": {
+      "src": "assets/img/baja/steering/column-support-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/steering/rack-side": {
+    "src": "assets/img/baja/steering/rack-side-1280.webp",
+    "srcset": "assets/img/baja/steering/rack-side-640.webp 640w, assets/img/baja/steering/rack-side-1280.webp 1280w, assets/img/baja/steering/rack-side-1920.webp 1920w",
+    "width": 1280,
+    "height": 1257,
+    "alt": "Side view of the steering rack, clevis, column pin holes, and mounting",
+    "large": {
+      "src": "assets/img/baja/steering/rack-side-2560.webp",
+      "width": 2560,
+      "height": 2513
+    }
+  },
+  "about/headshot": {
+    "src": "assets/img/about/headshot-640.webp",
+    "srcset": "assets/img/about/headshot-640.webp 640w, assets/img/about/headshot-1536.webp 1536w",
+    "width": 640,
+    "height": 960,
+    "alt": "Portrait of Peter Vlahakis in a dark suit, arms crossed, outdoors on campus"
+  },
+  "about/gallery/el-diablo-garage": {
+    "src": "assets/img/about/gallery/el-diablo-garage-1280.webp",
+    "srcset": "assets/img/about/gallery/el-diablo-garage-640.webp 640w, assets/img/about/gallery/el-diablo-garage-1280.webp 1280w, assets/img/about/gallery/el-diablo-garage-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "An orange and black Speed UTV on wheel dollies in a garage, its body panels off",
+    "large": {
+      "src": "assets/img/about/gallery/el-diablo-garage-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "about/gallery/el-diablo-dusk": {
+    "src": "assets/img/about/gallery/el-diablo-dusk-1280.webp",
+    "srcset": "assets/img/about/gallery/el-diablo-dusk-640.webp 640w, assets/img/about/gallery/el-diablo-dusk-1280.webp 1280w, assets/img/about/gallery/el-diablo-dusk-1920.webp 1920w",
+    "width": 1280,
+    "height": 960,
+    "alt": "The Speed UTV with its light bar on, on a desert trail at dusk"
+  },
+  "about/gallery/husqvarna-sunset": {
+    "src": "assets/img/about/gallery/husqvarna-sunset-1280.webp",
+    "srcset": "assets/img/about/gallery/husqvarna-sunset-640.webp 640w, assets/img/about/gallery/husqvarna-sunset-1280.webp 1280w, assets/img/about/gallery/husqvarna-sunset-1920.webp 1920w",
+    "width": 1280,
+    "height": 960,
+    "alt": "A rider in a helmet seated on a Husqvarna dirt bike, number 812, facing the sunset in the desert"
+  },
+  "about/gallery/race-day": {
+    "src": "assets/img/about/gallery/race-day-1280.webp",
+    "srcset": "assets/img/about/gallery/race-day-640.webp 640w, assets/img/about/gallery/race-day-1280.webp 1280w, assets/img/about/gallery/race-day-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "A smiling rider in race gear leaning on the handlebars of a dirt bike with number plate 881",
+    "large": {
+      "src": "assets/img/about/gallery/race-day-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "about/gallery/cr125-before": {
+    "src": "assets/img/about/gallery/cr125-before-1280.webp",
+    "srcset": "assets/img/about/gallery/cr125-before-640.webp 640w, assets/img/about/gallery/cr125-before-1280.webp 1280w, assets/img/about/gallery/cr125-before-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "A Honda CR 125 dirt bike partly taken apart in a garage, its seat off",
+    "large": {
+      "src": "assets/img/about/gallery/cr125-before-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "about/gallery/cr125-after": {
+    "src": "assets/img/about/gallery/cr125-after-1280.webp",
+    "srcset": "assets/img/about/gallery/cr125-after-640.webp 640w, assets/img/about/gallery/cr125-after-1280.webp 1280w, assets/img/about/gallery/cr125-after-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "A red Honda CR 125 dirt bike on a stand in a shop",
+    "large": {
+      "src": "assets/img/about/gallery/cr125-after-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "about/gallery/group-ride": {
+    "src": "assets/img/about/gallery/group-ride-1280.webp",
+    "srcset": "assets/img/about/gallery/group-ride-640.webp 640w, assets/img/about/gallery/group-ride-1280.webp 1280w, assets/img/about/gallery/group-ride-1920.webp 1920w",
+    "width": 1280,
+    "height": 960,
+    "alt": "A group of riders on dirt bikes lined up in a parking lot below a red sandstone cliff"
+  },
+  "about/gallery/woods-riding": {
+    "src": "assets/img/about/gallery/woods-riding-640.webp",
+    "srcset": "assets/img/about/gallery/woods-riding-640.webp 640w, assets/img/about/gallery/woods-riding-1365.webp 1365w",
+    "width": 640,
+    "height": 960,
+    "alt": "A rider in orange gear on a dirt bike, on a narrow trail through green woods"
+  },
+  "about/gallery/trail-overlook": {
+    "src": "assets/img/about/gallery/trail-overlook-1134.webp",
+    "srcset": "assets/img/about/gallery/trail-overlook-640.webp 640w, assets/img/about/gallery/trail-overlook-1134.webp 1134w",
+    "width": 1134,
+    "height": 638,
+    "alt": "A rider on a yellow and white Husqvarna waving from slickrock above a desert valley"
+  },
+  "about/gallery/husqvarna-ready": {
+    "src": "assets/img/about/gallery/husqvarna-ready-1280.webp",
+    "srcset": "assets/img/about/gallery/husqvarna-ready-640.webp 640w, assets/img/about/gallery/husqvarna-ready-1280.webp 1280w, assets/img/about/gallery/husqvarna-ready-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "A black Husqvarna dirt bike, number 812, on a stand in a machine shop",
+    "large": {
+      "src": "assets/img/about/gallery/husqvarna-ready-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "about/gallery/mountain-riding": {
+    "src": "assets/img/about/gallery/mountain-riding-1280.webp",
+    "srcset": "assets/img/about/gallery/mountain-riding-640.webp 640w, assets/img/about/gallery/mountain-riding-1280.webp 1280w, assets/img/about/gallery/mountain-riding-1920.webp 1920w",
+    "width": 1280,
+    "height": 960,
+    "alt": "A rider seated on a dirt bike among pine trees, with snow-capped mountains behind",
+    "large": {
+      "src": "assets/img/about/gallery/mountain-riding-2560.webp",
+      "width": 2560,
+      "height": 1920
+    }
+  },
+  "about/gallery/welding-shop": {
+    "src": "assets/img/about/gallery/welding-shop-1280.webp",
+    "srcset": "assets/img/about/gallery/welding-shop-640.webp 640w, assets/img/about/gallery/welding-shop-1280.webp 1280w, assets/img/about/gallery/welding-shop-1920.webp 1920w",
+    "width": 1280,
+    "height": 2276,
+    "alt": "Two people at a fixture table in a shop, one holding a part while the other welds it"
+  },
+  "about/gallery/canyon-walk": {
+    "src": "assets/img/about/gallery/canyon-walk-1280.webp",
+    "srcset": "assets/img/about/gallery/canyon-walk-640.webp 640w, assets/img/about/gallery/canyon-walk-1280.webp 1280w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "A group of hikers in a red sandstone canyon below layered cliffs"
+  },
+  "about/gallery/overlook-friends": {
+    "src": "assets/img/about/gallery/overlook-friends-1280.webp",
+    "srcset": "assets/img/about/gallery/overlook-friends-640.webp 640w, assets/img/about/gallery/overlook-friends-1280.webp 1280w, assets/img/about/gallery/overlook-friends-1920.webp 1920w",
+    "width": 1280,
+    "height": 960,
+    "alt": "Four friends and a dog on a rocky overlook above a forested valley",
+    "large": {
+      "src": "assets/img/about/gallery/overlook-friends-2560.webp",
+      "width": 2560,
+      "height": 1920
+    }
+  },
+  "about/gallery/trail-day-dog": {
+    "src": "assets/img/about/gallery/trail-day-dog-640.webp",
+    "srcset": "assets/img/about/gallery/trail-day-dog-640.webp 640w, assets/img/about/gallery/trail-day-dog-1359.webp 1359w",
+    "width": 640,
+    "height": 866,
+    "alt": "Two hikers on a wooden footbridge in the woods, one holding a dog"
+  },
+  "about/gallery/riding-crew": {
+    "src": "assets/img/about/gallery/riding-crew-1134.webp",
+    "srcset": "assets/img/about/gallery/riding-crew-640.webp 640w, assets/img/about/gallery/riding-crew-1134.webp 1134w",
+    "width": 1134,
+    "height": 638,
+    "alt": "A group of riders in gear on a desert trail, with mountains and a cloudy sky behind"
+  },
+  "about/gallery/game-night": {
+    "src": "assets/img/about/gallery/game-night-1280.webp",
+    "srcset": "assets/img/about/gallery/game-night-640.webp 640w, assets/img/about/gallery/game-night-1280.webp 1280w, assets/img/about/gallery/game-night-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Two fans in burnt orange at a night football game in a packed stadium",
+    "large": {
+      "src": "assets/img/about/gallery/game-night-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "about/gallery/red-river": {
+    "src": "assets/img/about/gallery/red-river-1280.webp",
+    "srcset": "assets/img/about/gallery/red-river-640.webp 640w, assets/img/about/gallery/red-river-1280.webp 1280w, assets/img/about/gallery/red-river-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Four friends in front of the Cotton Bowl sign, between Sooners and Longhorns pennants",
+    "large": {
+      "src": "assets/img/about/gallery/red-river-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "about/gallery/truck-night": {
+    "src": "assets/img/about/gallery/truck-night-1280.webp",
+    "srcset": "assets/img/about/gallery/truck-night-640.webp 640w, assets/img/about/gallery/truck-night-1280.webp 1280w, assets/img/about/gallery/truck-night-1920.webp 1920w",
+    "width": 1280,
+    "height": 853,
+    "alt": "A pickup truck with its lights on, parked under trees at dusk",
+    "large": {
+      "src": "assets/img/about/gallery/truck-night-2560.webp",
+      "width": 2560,
+      "height": 1707
+    }
+  },
+  "about/gallery/mountain-biking": {
+    "src": "assets/img/about/gallery/mountain-biking-1280.webp",
+    "srcset": "assets/img/about/gallery/mountain-biking-640.webp 640w, assets/img/about/gallery/mountain-biking-1280.webp 1280w, assets/img/about/gallery/mountain-biking-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "A rider standing beside a blue mountain bike on a riverside path under a bridge",
+    "large": {
+      "src": "assets/img/about/gallery/mountain-biking-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "about/gallery/campfire-friends": {
+    "src": "assets/img/about/gallery/campfire-friends-640.webp",
+    "srcset": "assets/img/about/gallery/campfire-friends-640.webp 640w, assets/img/about/gallery/campfire-friends-1536.webp 1536w",
+    "width": 640,
+    "height": 850,
+    "alt": "Friends standing behind a large campfire at night"
+  },
+  "about/gallery/where-it-started": {
+    "src": "assets/img/about/gallery/where-it-started-1280.webp",
+    "srcset": "assets/img/about/gallery/where-it-started-640.webp 640w, assets/img/about/gallery/where-it-started-1280.webp 1280w, assets/img/about/gallery/where-it-started-1920.webp 1920w",
+    "width": 1280,
+    "height": 959,
+    "alt": "A young boy smiling in a grassy field, holding a rifle",
+    "large": {
+      "src": "assets/img/about/gallery/where-it-started-2560.webp",
+      "width": 2560,
+      "height": 1918
+    }
+  },
+  "about/gallery/horseback": {
+    "src": "assets/img/about/gallery/horseback-1280.webp",
+    "srcset": "assets/img/about/gallery/horseback-640.webp 640w, assets/img/about/gallery/horseback-1280.webp 1280w, assets/img/about/gallery/horseback-1920.webp 1920w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "A rider on a brown and white horse in a dirt clearing below dry hills",
+    "large": {
+      "src": "assets/img/about/gallery/horseback-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "about/gallery/family": {
+    "src": "assets/img/about/gallery/family-1280.webp",
+    "srcset": "assets/img/about/gallery/family-640.webp 640w, assets/img/about/gallery/family-1280.webp 1280w",
+    "width": 1280,
+    "height": 1707,
+    "alt": "Two people standing on a tree-lined driveway, holding a small plant",
+    "large": {
+      "src": "assets/img/about/gallery/family-2560.webp",
+      "width": 2560,
+      "height": 3413
+    }
+  },
+  "baja/tabs/plasma-cutting": {
+    "src": "assets/video/clips/baja/tabs/plasma-cutting.mp4",
+    "type": "video/mp4",
+    "width": 1280,
+    "height": 720,
+    "alt": "The Dynatorch CNC plasma table cutting steel mounting tabs",
+    "video": true,
+    "poster": {
+      "src": "assets/img/baja/tabs/plasma-cutting-poster-1280.webp",
+      "srcset": "assets/img/baja/tabs/plasma-cutting-poster-640.webp 640w, assets/img/baja/tabs/plasma-cutting-poster-1280.webp 1280w"
+    }
+  }
+}
