@@ -2,11 +2,12 @@
 """Cut and encode the site's background clips from Swingarm City.mov.
 
     .venv\\Scripts\\python tools\\build_hero.py [--clip hero|projects|baja|all] [--source PATH]
-                                              [--start S] [--end S] [--xfade S]
+                                              [--start S] [--end S] [--xfade S] [--og-only]
 
 Clips (see CLIPS below; --start/--end/--xfade override the chosen clip's defaults):
   hero      Home hero, 1:10-1:33. Writes assets/video/hero-1080.mp4, hero-720.mp4 and
-            hero-poster.webp, plus the Open Graph image assets/img/og.jpg (cut from the poster).
+            hero-poster.webp, plus the Open Graph image assets/img/og.jpg (cut from the poster,
+            with the name drawn on it as the hero shows it). --og-only rebuilds just og.jpg.
   projects  Projects page side column, 0:35-0:50. A tall 912 x 2160 slice of the 4K frame
             whose center follows the ridge, then the rider. Writes side-projects.mp4 + poster.
   baja      Baja page side column, 6:15-6:35. A fixed slice centered on the ridge.
@@ -39,12 +40,21 @@ from fractions import Fraction
 from pathlib import Path
 
 import imageio_ffmpeg
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 SITE = Path(__file__).resolve().parent.parent
 VIDEO_DIR = SITE / "assets" / "video"
 OG_PATH = SITE / "assets" / "img" / "og.jpg"
 FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
+
+# The name on the Open Graph image, set like the hero's (.hero__name in css/home.css): Inter 700,
+# tracking -0.035em, the two words 0.26em apart, in --text with the --hero-text-halo shadows behind.
+# 114 px is the hero name's size in a 1200 px wide window (--fs-hero is 9.5vw there).
+OG_NAME = ("Peter", "Vlahakis")
+OG_FONT = SITE / "assets" / "fonts" / "inter-latin-wght-normal.woff2"
+OG_SIZE, OG_WEIGHT, OG_TRACKING, OG_WORD_GAP = 114, 700, -0.035, 0.26
+OG_HALO = [(0, 1, 0.70), (0, 4, 0.55), (2, 20, 0.40)]  # --hero-text-halo: (y offset px, blur px, opacity)
+TOKENS = SITE / "css" / "tokens.css"
 
 MB = 1_000_000
 KB = 1_000
@@ -217,6 +227,17 @@ def first_frame(mezz: Path) -> Image.Image:
     return Image.open(io.BytesIO(png)).convert("RGB")
 
 
+def source_first_frame(src: Path, info: dict, clip: dict, height: int) -> Image.Image:
+    """The clip's first frame for --og-only, made the way the full build makes it: a plain seek to
+    --start lands a frame away, because the mezzanine starts early for the loop dissolve. A few
+    seconds of mezzanine are enough (the dissolve length is capped at a quarter of the clip)."""
+    short = dict(clip, end=min(clip["end"], clip["start"] + 4 * clip["xfade"] + 1))
+    with tempfile.TemporaryDirectory() as tmp:
+        mezz = Path(tmp) / "mezzanine.mkv"
+        make_mezzanine(src, info, short, height, mezz)
+        return first_frame(mezz)
+
+
 def save_poster(frame: Image.Image, out: Path, max_width: int, target: int) -> tuple[int, int]:
     if frame.width > max_width:
         frame = frame.resize((max_width, round(frame.height * max_width / frame.width)), Image.LANCZOS)
@@ -229,12 +250,53 @@ def save_poster(frame: Image.Image, out: Path, max_width: int, target: int) -> t
     return buf.tell(), q
 
 
+def token_color(name: str) -> tuple[int, int, int]:
+    """A #rrggbb color token from css/tokens.css, so the palette stays in that one file."""
+    m = re.search(rf"--{name}:\s*#([0-9a-fA-F]{{6}})\s*;", TOKENS.read_text(encoding="utf-8"))
+    if not m:
+        sys.exit(f"css/tokens.css has no #rrggbb value for --{name}")
+    return tuple(int(m.group(1)[i:i + 2], 16) for i in (0, 2, 4))
+
+
+def draw_name(og: Image.Image) -> Image.Image:
+    """The name, centered on the image, with the halo under it."""
+    font = ImageFont.truetype(str(OG_FONT), OG_SIZE)
+    font.set_variation_by_axes([OG_WEIGHT])
+    track, glyphs, x = OG_TRACKING * OG_SIZE, [], 0.0
+    for n, word in enumerate(OG_NAME):
+        if n:
+            x += OG_WORD_GAP * OG_SIZE
+        for i, ch in enumerate(word):
+            # The pen position before ch, kerned against the letter before it, plus the tracking so far
+            glyphs.append((x + font.getlength(word[:i + 1]) - font.getlength(ch) + i * track, ch))
+        x += font.getlength(word) + len(word) * track
+
+    def text_mask(dx: float, dy: float) -> Image.Image:
+        mask = Image.new("L", og.size, 0)
+        pen = ImageDraw.Draw(mask)
+        for gx, ch in glyphs:
+            pen.text((dx + gx, dy), ch, font=font, fill=255, anchor="ls")
+        return mask
+
+    # Center the letters themselves, not the line box (the name has capitals and ascenders, no descenders)
+    left, top, right, bottom = text_mask(0, OG_SIZE).getbbox()
+    mask = text_mask((og.width - (right - left)) / 2 - left, (og.height - (bottom - top)) / 2 - top + OG_SIZE)
+
+    out = og.copy()
+    shade = Image.new("RGB", og.size, token_color("hero-scrim-color"))
+    for dy, blur, opacity in OG_HALO:
+        halo = mask.transform(og.size, Image.AFFINE, (1, 0, 0, 0, 1, -dy)).filter(ImageFilter.GaussianBlur(blur / 2))
+        out = Image.composite(shade, out, halo.point(lambda v: round(v * opacity)))
+    return Image.composite(Image.new("RGB", og.size, token_color("text")), out, mask)
+
+
 def save_og(frame: Image.Image, out: Path) -> int:
     w, h = frame.size
     crop_h = min(h, round(w * 630 / 1200))
     crop_w = round(crop_h * 1200 / 630)
     left, top = (w - crop_w) // 2, (h - crop_h) // 2
     og = frame.crop((left, top, left + crop_w, top + crop_h)).resize((1200, 630), Image.LANCZOS)
+    og = draw_name(og)
     out.parent.mkdir(parents=True, exist_ok=True)
     og.save(out, "JPEG", quality=84, optimize=True, progressive=True)
     return out.stat().st_size
@@ -273,6 +335,7 @@ def main() -> int:
     ap.add_argument("--start", type=float, help="clip start in seconds (overrides the clip's default)")
     ap.add_argument("--end", type=float, help="clip end in seconds (overrides the clip's default)")
     ap.add_argument("--xfade", type=float, help="loop dissolve in seconds; 0 for a hard cut")
+    ap.add_argument("--og-only", action="store_true", help="rebuild only assets/img/og.jpg, without the video")
     args = ap.parse_args()
     src = Path(args.source).resolve()
     if SITE in src.parents:
@@ -294,6 +357,13 @@ def main() -> int:
         for key in ("start", "end", "xfade"):
             if getattr(args, key) is not None:
                 clip[key] = getattr(args, key)
+        if args.og_only:
+            if not clip["og"]:
+                sys.exit(f"{name}: this clip makes no Open Graph image")
+            top = min(max(h for _, heights, _, _ in clip["outputs"] for h in heights), info["height"])
+            og_bytes = save_og(source_first_frame(src, info, clip, top), OG_PATH)
+            print(f"  result og.jpg: 1200x630  {og_bytes / KB:.0f} KB")
+            continue
         if clip["crop"] and info["width"] < SIDE_WIDTH:
             sys.exit(f"{name}: the source is narrower than the {SIDE_WIDTH} px slice")
         ok = build(name, clip, src, info) and ok
